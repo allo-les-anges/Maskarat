@@ -163,14 +163,17 @@
         }
 
         .bird::before {
-            left: 0;
-            transform: skewY(25deg); /* Angle initial un peu plus prononcé */
-        }
+    left: 0;
+    transform: skewY(25deg);
+    animation: wingLeft 1s infinite ease-in-out;
+}
 
-        .bird::after {
-            right: 0;
-            transform: skewY(-25deg); /* Angle initial un peu plus prononcé */
-        }
+.bird::after {
+    right: 0;
+    transform: skewY(-25deg);
+    animation: wingRight 1s infinite ease-in-out;
+}
+
 
         /* Positions individuelles des oiseaux */
         .bird:nth-child(1) {
