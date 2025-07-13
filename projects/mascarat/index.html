@@ -19,13 +19,16 @@
         }
         
         .hero-section {
-    background: 
-        linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
-        url("https://i.postimg.cc/W4fcccWL/32-resultat.jpg");
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-}
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+                url("https://i.postimg.cc/W4fcccWL/32-resultat.jpg");
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            /* Important pour le positionnement absolu des oiseaux */
+            position: relative; 
+            overflow: hidden; /* Pour s'assurer que les oiseaux ne débordent pas si trop grands */
+        }
         
         .section-title {
             position: relative;
@@ -127,10 +130,117 @@
                 transform: translateY(-10px);
             }
         }
+
+        /* --- Styles pour les oiseaux animés --- */
+        .birds-container {
+            position: absolute;
+            top: 20px; /* Ajustez la position verticale */
+            right: 20px; /* Ajustez la position horizontale */
+            width: 100px; /* Largeur totale du conteneur des oiseaux */
+            height: 100px; /* Hauteur totale du conteneur des oiseaux */
+            pointer-events: none; /* Pour que les oiseaux ne bloquent pas les clics si besoin */
+        }
+
+        .bird {
+            position: absolute;
+            width: 30px; /* Largeur de chaque oiseau */
+            height: 15px; /* Hauteur de chaque oiseau (pour l'espace du V) */
+            background: transparent; /* Pas de fond */
+            overflow: hidden; /* Cache les parties qui dépassent */
+        }
+
+        .bird::before,
+        .bird::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 50%; /* Chaque trait du V fait la moitié de la largeur */
+            height: 2px; /* Épaisseur du trait */
+            background-color: white; /* Couleur des oiseaux */
+            transform-origin: top; /* Point de pivot pour la rotation */
+        }
+
+        .bird::before {
+            left: 0;
+            transform: skewY(20deg); /* Angle initial de l'aile gauche */
+        }
+
+        .bird::after {
+            right: 0;
+            transform: skewY(-20deg); /* Angle initial de l'aile droite */
+        }
+
+        /* Positions individuelles des oiseaux */
+        .bird:nth-child(1) {
+            top: 0;
+            right: 0;
+            animation: fly 2s infinite ease-in-out; /* Animation principale de vol */
+        }
+
+        .bird:nth-child(2) {
+            top: 30px; /* Décalage pour le deuxième oiseau */
+            right: 20px;
+            animation: fly 2.5s infinite ease-in-out 0.5s; /* Animation décalée pour un effet plus naturel */
+            transform: scale(0.8); /* Plus petit pour l'effet de perspective */
+            opacity: 0.8;
+        }
+
+        /* Animation de battement d'ailes */
+        @keyframes fly {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            25% {
+                transform: translateY(-5px); /* Monte légèrement */
+            }
+            50% {
+                transform: translateY(0);
+            }
+            75% {
+                transform: translateY(-2px);
+            }
+        }
+
+        /* Animation des ailes elles-mêmes (rotation du V) */
+        .bird::before {
+            animation: wingLeft 0.5s infinite alternate ease-in-out;
+        }
+        .bird::after {
+            animation: wingRight 0.5s infinite alternate ease-in-out;
+        }
+
+        @keyframes wingLeft {
+            0% { transform: skewY(20deg); }
+            100% { transform: skewY(0deg); } /* Battement vers le haut */
+        }
+
+        @keyframes wingRight {
+            0% { transform: skewY(-20deg); }
+            100% { transform: skewY(0deg); } /* Battement vers le haut */
+        }
+
+        /* Responsive adjustments for smaller screens if needed */
+        @media (max-width: 768px) {
+            .birds-container {
+                top: 10px;
+                right: 10px;
+                width: 70px;
+                height: 70px;
+            }
+            .bird {
+                width: 20px;
+                height: 10px;
+            }
+            .bird:nth-child(2) {
+                top: 20px;
+                right: 10px;
+                transform: scale(0.7);
+            }
+        }
+
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="fixed w-full z-50 bg-white bg-opacity-95 shadow-sm">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold text-gray-800">
@@ -150,7 +260,6 @@
                 </svg>
             </button>
         </div>
-        <!-- Mobile menu -->
         <div class="md:hidden hidden bg-white w-full" id="mobile-menu">
             <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
                 <a href="#about" class="text-gray-700 hover:text-[#c8a97e] py-2 transition">Over ons</a>
@@ -163,8 +272,11 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero-section flex items-center justify-center text-center text-white">
+        <div class="birds-container">
+            <div class="bird"></div>
+            <div class="bird"></div>
+        </div>
         <div class="container mx-auto px-4">
             <h1 class="text-5xl md:text-7xl font-bold mb-6">Mascarat Suites</h1>
             <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto">Nature's beauty.</p>
@@ -176,7 +288,6 @@
             </div>
         </div>
     </section>
-
     <!-- About Section -->
     <section id="about" class="py-20 bg-white">
     <div class="container mx-auto px-4">
