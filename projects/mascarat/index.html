@@ -139,35 +139,37 @@
             width: 100px; /* Largeur totale du conteneur des oiseaux */
             height: 100px; /* Hauteur totale du conteneur des oiseaux */
             pointer-events: none; /* Pour que les oiseaux ne bloquent pas les clics si besoin */
+            z-index: 10; /* Assurez-vous qu'ils sont au-dessus du contenu */
         }
 
         .bird {
             position: absolute;
             width: 30px; /* Largeur de chaque oiseau */
-            height: 15px; /* Hauteur de chaque oiseau (pour l'espace du V) */
+            height: 20px; /* Augmente la hauteur pour plus de place pour l'animation */
             background: transparent; /* Pas de fond */
-            overflow: hidden; /* Cache les parties qui dépassent */
+            overflow: visible; /* Laisser les ailes "dépasser" si elles bougent */
         }
 
         .bird::before,
         .bird::after {
             content: '';
             position: absolute;
-            top: 0;
+            bottom: 0; /* Positionne les ailes en bas du conteneur du bird */
             width: 50%; /* Chaque trait du V fait la moitié de la largeur */
             height: 2px; /* Épaisseur du trait */
             background-color: white; /* Couleur des oiseaux */
-            transform-origin: top; /* Point de pivot pour la rotation */
+            /* MODIFICATION CLÉ : transform-origin en bas pour un meilleur pivotement */
+            transform-origin: bottom;
         }
 
         .bird::before {
             left: 0;
-            transform: skewY(20deg); /* Angle initial de l'aile gauche */
+            transform: skewY(25deg); /* Angle initial un peu plus prononcé */
         }
 
         .bird::after {
             right: 0;
-            transform: skewY(-20deg); /* Angle initial de l'aile droite */
+            transform: skewY(-25deg); /* Angle initial un peu plus prononcé */
         }
 
         /* Positions individuelles des oiseaux */
@@ -201,22 +203,17 @@
             }
         }
 
-        /* Animation des ailes elles-mêmes (rotation du V) */
-        .bird::before {
-            animation: wingLeft 0.5s infinite alternate ease-in-out;
-        }
-        .bird::after {
-            animation: wingRight 0.5s infinite alternate ease-in-out;
-        }
-
+        /* MODIFICATION CLÉ : Nouvelles keyframes pour un battement plus visible */
         @keyframes wingLeft {
-            0% { transform: skewY(20deg); }
-            100% { transform: skewY(0deg); } /* Battement vers le haut */
+            0% { transform: skewY(25deg); } /* Ailes un peu plus ouvertes */
+            50% { transform: skewY(0deg); }  /* Ailes se rapprochent (battement vers le haut) */
+            100% { transform: skewY(25deg); } /* Ailes reviennent à la position ouverte */
         }
 
         @keyframes wingRight {
-            0% { transform: skewY(-20deg); }
-            100% { transform: skewY(0deg); } /* Battement vers le haut */
+            0% { transform: skewY(-25deg); } /* Ailes un peu plus ouvertes */
+            50% { transform: skewY(0deg); }  /* Ailes se rapprochent (battement vers le haut) */
+            100% { transform: skewY(-25deg); } /* Ailes reviennent à la position ouverte */
         }
 
         /* Responsive adjustments for smaller screens if needed */
