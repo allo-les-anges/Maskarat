@@ -929,23 +929,27 @@
 
         <div class="flex flex-col md:flex-row">
             <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
-                <form class="bg-white p-8 rounded-lg shadow-lg">
+                <form action="https://formspree.io/f/myzjgeka" method="POST" class="bg-white p-8 rounded-lg shadow-lg">
                     <div class="mb-6">
                         <label for="name" class="block text-gray-700 font-medium mb-2">Naam</label>
-                        <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#c8a97e]">
+                        <input type="text" id="name" name="Naam" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#c8a97e]" required>
                     </div>
                     <div class="mb-6">
                         <label for="email" class="block text-gray-700 font-medium mb-2">E-mail</label>
-                        <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#c8a97e]">
+                        <input type="email" id="email" name="_replyto" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#c8a97e]" required>
                     </div>
                     <div class="mb-6">
                         <label for="phone" class="block text-gray-700 font-medium mb-2">Telefoon</label>
-                        <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#c8a97e]">
+                        <input type="tel" id="phone" name="Telefoon" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#c8a97e]">
                     </div>
                     <div class="mb-6">
                         <label for="message" class="block text-gray-700 font-medium mb-2">Bericht</label>
-                        <textarea id="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#c8a97e]"></textarea>
+                        <textarea id="message" name="Bericht" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#c8a97e]" required></textarea>
                     </div>
+                    <input type="hidden" name="_subject" value="Nouveau message de Mascarat Suites">
+                    
+                    <input type="hidden" name="_cc" value="gillian@amaru-homes.com, deborah@amaru-homes.com">
+                    
                     <div class="text-center">
                         <button type="submit" class="btn-primary px-8 py-3 rounded-full text-white font-medium">Verstuur</button>
                     </div>
