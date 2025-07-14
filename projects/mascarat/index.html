@@ -1343,6 +1343,117 @@
                 }
             });
         });
-    </script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        const carouselInner = document.getElementById('carousel-inner');
+
+        const prevBtn = document.getElementById('prevBtn');
+
+        const nextBtn = document.getElementById('nextBtn');
+
+        const carouselDots = document.getElementById('carousel-dots');
+
+        const slides = carouselInner.children;
+
+        const totalSlides = slides.length;
+
+        let currentIndex = 0;
+
+
+
+        // Générer les points de navigation
+
+        for (let i = 0; i < totalSlides; i++) {
+
+            const dot = document.createElement('span');
+
+            dot.classList.add('w-3', 'h-3', 'bg-gray-400', 'rounded-full', 'cursor-pointer');
+
+            dot.addEventListener('click', () => {
+
+                goToSlide(i);
+
+            });
+
+            carouselDots.appendChild(dot);
+
+        }
+
+
+
+        const dots = carouselDots.children;
+
+
+
+        function updateCarousel() {
+
+            carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+            updateDots();
+
+        }
+
+
+
+        function updateDots() {
+
+            for (let i = 0; i < dots.length; i++) {
+
+                if (i === currentIndex) {
+
+                    dots[i].classList.add('bg-[#c8a97e]'); // Couleur active
+
+                    dots[i].classList.remove('bg-gray-400');
+
+                } else {
+
+                    dots[i].classList.add('bg-gray-400');
+
+                    dots[i].classList.remove('bg-[#c8a97e]');
+
+                }
+
+            }
+
+        }
+
+
+
+        function goToSlide(index) {
+
+            currentIndex = index;
+
+            updateCarousel();
+
+        }
+
+
+
+        prevBtn.addEventListener('click', () => {
+
+            currentIndex = (currentIndex === 0) ? totalSlides - 1 : currentIndex - 1;
+
+            updateCarousel();
+
+        });
+
+
+
+        nextBtn.addEventListener('click', () => {
+
+            currentIndex = (currentIndex === totalSlides - 1) ? 0 : currentIndex + 1;
+
+            updateCarousel();
+
+        });
+
+
+
+        // Initialisation du carrousel
+
+        updateCarousel(); // Affiche la première image et active le premier point
+
+    });
+</script>
 </body>
 </html>
