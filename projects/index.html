@@ -42,13 +42,13 @@
             object-fit: cover;
             z-index: 1; /* Changed from -1 to 1 */
         }
-      .hero-overlay {
+        .hero-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-    background-color: rgba(72, 46, 29, 0.6); /* <= C'est le filtre sombre */
+            background-color: rgba(72, 46, 29, 0.6);
             z-index: 0;
         }
         .hero-content {
@@ -112,6 +112,7 @@
             <source src="https://www.amaru-resorts.com/assets/videos/video_hompage_projects.mp4" type="video/mp4">
             Votre navigateur ne prend pas en charge la lecture de vidéos.
         </video>
+        <div class="hero-overlay"></div>
         <div class="hero-content text-center px-4">
             <h1 class="text-4xl md:text-6xl font-playfair font-bold text-white mb-4">Projets Internationaux de Luxe</h1>
             <div class="gold-line w-24 mx-auto my-6"></div>
@@ -339,12 +340,16 @@
                 title: "Mascarat Suites",
                 description: "Situé sur la côte méditerranéenne espagnole, Mascarat Suites est un complexe résidentiel de luxe offrant une expérience de vie incomparable. Chaque suite a été conçue avec une attention méticuleuse aux détails, utilisant les matériaux les plus nobles et les finitions les plus raffinées.",
                 features: [
-                    "Suites de 218 à 368 m² avec terrasses panoramiques",
+                    "Suites de 150 à 300 m² avec terrasses panoramiques",
                     "Piscines privées à débordement",
+                    "Service de conciergerie 24h/24",
+                    "Spa et centre de bien-être",
+                    "Restaurant gastronomique",
+                    "Accès direct à la plage privée",
                     "Sécurité 24h/24"
                 ],
-                price: "À partir de 650 000 €",
-                delivery: "Livraison prévue : 2ème trimestre 2027",
+                price: "À partir de 1 200 000 €",
+                delivery: "Livraison prévue : 2ème trimestre 2024",
                 link: "https://www.amaru-resorts.com/projects/mascarat/"
             },
             halepo: {
@@ -356,10 +361,11 @@
                     "Piscines intérieures et extérieures",
                     "Domotique intégrée de dernière génération",
                     "Matériaux écologiques et durables",
-                    "Vues panoramiques sur les montagnes"
+                    "Vues panoramiques sur les montagnes",
+                    "Héliport privé"
                 ],
-                price: "À partir de 650 000 €",
-                delivery: "Livraison prévue : 4ème trimestre 2026",
+                price: "À partir de 1 800 000 €",
+                delivery: "Livraison prévue : 4ème trimestre 2023",
                 link: "https://www.amaru-resorts.com/projects/halepo/"
             }
         };
