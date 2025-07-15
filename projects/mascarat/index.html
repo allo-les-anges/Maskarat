@@ -1,214 +1,293 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mascarat Suites | Luxury Living</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap">
-    <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-            scroll-behavior: smooth;
-            color: #333;
-            background-color: #f9f7f3;
-        }
-        
-        h1, h2, h3, h4, h5 {
-            font-family: 'Playfair Display', serif;
-        }
-
-        /* Nouvelle classe pour appliquer Playfair Display spécifiquement au logo dans la nav */
-        .font-playfair-display {
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mascarat Suites | Luxury Living</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+            color: #333;
+            background-color: #f9f7f3;
+        }
+        
+        h1, h2, h3, h4, h5 {
             font-family: 'Playfair Display', serif;
         }
-        
-        .hero-section {
-            background: 
-                linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
-                url("https://i.postimg.cc/W4fcccWL/32-resultat.jpg");
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            position: relative; 
-            overflow: hidden;
-        }
-        
-        .section-title {
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background-color: #c8a97e;
-        }
-        
-        .amenity-card {
-            transition: all 0.3s ease;
-        }
-        
-        .amenity-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .property-card {
-            transition: all 0.3s ease;
-        }
-        
-        .property-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .nav-link {
-            position: relative;
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: #c8a97e;
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        
-        .active::after {
-            width: 100%;
-        }
-        
-        .gallery-img {
-            transition: all 0.3s ease;
-        }
-        
-        .gallery-img:hover {
-            transform: scale(1.03);
-        }
-        
-        .btn-primary {
-            background-color: #c8a97e;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-primary:hover {
-            background-color: #b69468;
-            transform: translateY(-2px);
-        }
-        
-        .btn-outline {
-            border: 2px solid #c8a97e;
-            color: #c8a97e;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-outline:hover {
-            background-color: #c8a97e;
-            color: white;
-        }
-        
-        .scroll-down {
-            animation: bounce 2s infinite;
-        }
-        
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-20px);
-            }
-            60% {
-                transform: translateY(-10px);
-            }
-        }
+        
+        .hero-section {
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+                url("https://i.postimg.cc/W4fcccWL/32-resultat.jpg");
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            /* Important pour le positionnement absolu des oiseaux */
+            position: relative; 
+            overflow: hidden; /* Pour s'assurer que les oiseaux ne débordent pas si trop grands */
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: #c8a97e;
+        }
+        
+        .amenity-card {
+            transition: all 0.3s ease;
+        }
+        
+        .amenity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .property-card {
+            transition: all 0.3s ease;
+        }
+        
+        .property-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #c8a97e;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .active::after {
+            width: 100%;
+        }
+        
+        .gallery-img {
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-img:hover {
+            transform: scale(1.03);
+        }
+        
+        .btn-primary {
+            background-color: #c8a97e;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #b69468;
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            border: 2px solid #c8a97e;
+            color: #c8a97e;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline:hover {
+            background-color: #c8a97e;
+            color: white;
+        }
+        
+        .scroll-down {
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
 
-        @media (max-width: 768px) {
-            .birds-container {
-                top: 10px;
-                right: 10px;
-                width: 70px;
-                height: 70px;
-            }
-            .bird {
-                width: 20px;
-                height: 10px;
-            }
-            .bird:nth-child(2) {
-                top: 20px;
-                right: 10px;
-                transform: scale(0.7);
-            }
-        }
+        /* --- Styles pour les oiseaux animés --- */
+        .birds-container {
+            position: absolute;
+            top: 20px; /* Ajustez la position verticale */
+            right: 20px; /* Ajustez la position horizontale */
+            width: 100px; /* Largeur totale du conteneur des oiseaux */
+            height: 100px; /* Hauteur totale du conteneur des oiseaux */
+            pointer-events: none; /* Pour que les oiseaux ne bloquent pas les clics si besoin */
+            z-index: 10; /* Assurez-vous qu'ils sont au-dessus du contenu */
+        }
 
-    </style>
+        .bird {
+            position: absolute;
+            width: 30px; /* Largeur de chaque oiseau */
+            height: 20px; /* Augmente la hauteur pour plus de place pour l'animation */
+            background: transparent; /* Pas de fond */
+            overflow: visible; /* Laisser les ailes "dépasser" si elles bougent */
+        }
+
+        .bird::before,
+        .bird::after {
+            content: '';
+            position: absolute;
+            bottom: 0; /* Positionne les ailes en bas du conteneur du bird */
+            width: 50%; /* Chaque trait du V fait la moitié de la largeur */
+            height: 2px; /* Épaisseur du trait */
+            background-color: white; /* Couleur des oiseaux */
+            /* MODIFICATION CLÉ : transform-origin en bas pour un meilleur pivotement */
+            transform-origin: bottom;
+        }
+
+        .bird::before {
+    left: 0;
+    transform: skewY(25deg);
+    animation: wingLeft 1s infinite ease-in-out;
+}
+
+.bird::after {
+    right: 0;
+    transform: skewY(-25deg);
+    animation: wingRight 1s infinite ease-in-out;
+}
+
+
+        /* Positions individuelles des oiseaux */
+        .bird:nth-child(1) {
+            top: 0;
+            right: 0;
+            animation: fly 2s infinite ease-in-out; /* Animation principale de vol */
+        }
+
+        .bird:nth-child(2) {
+            top: 30px; /* Décalage pour le deuxième oiseau */
+            right: 20px;
+            animation: fly 2.5s infinite ease-in-out 0.5s; /* Animation décalée pour un effet plus naturel */
+            transform: scale(0.8); /* Plus petit pour l'effet de perspective */
+            opacity: 0.8;
+        }
+
+        /* Animation de battement d'ailes */
+        @keyframes fly {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            25% {
+                transform: translateY(-5px); /* Monte légèrement */
+            }
+            50% {
+                transform: translateY(0);
+            }
+            75% {
+                transform: translateY(-2px);
+            }
+        }
+
+        /* MODIFICATION CLÉ : Nouvelles keyframes pour un battement plus visible */
+        @keyframes wingLeft {
+            0% { transform: skewY(25deg); } /* Ailes un peu plus ouvertes */
+            50% { transform: skewY(0deg); }  /* Ailes se rapprochent (battement vers le haut) */
+            100% { transform: skewY(25deg); } /* Ailes reviennent à la position ouverte */
+        }
+
+        @keyframes wingRight {
+            0% { transform: skewY(-25deg); } /* Ailes un peu plus ouvertes */
+            50% { transform: skewY(0deg); }  /* Ailes se rapprochent (battement vers le haut) */
+            100% { transform: skewY(-25deg); } /* Ailes reviennent à la position ouverte */
+        }
+
+        /* Responsive adjustments for smaller screens if needed */
+        @media (max-width: 768px) {
+            .birds-container {
+                top: 10px;
+                right: 10px;
+                width: 70px;
+                height: 70px;
+            }
+            .bird {
+                width: 20px;
+                height: 10px;
+            }
+            .bird:nth-child(2) {
+                top: 20px;
+                right: 10px;
+                transform: scale(0.7);
+            }
+        }
+
+    </style>
 </head>
 <body>
-    <nav class="fixed w-full z-50 bg-white bg-opacity-95 shadow-sm">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-                        <div class="flex items-center">
-                <a href="#" class="text-2xl font-bold text-gray-800 font-playfair-display">
-                    Mascarat <span class="text-[#c8a97e]">Suites</span>
-                </a>
-                <img src="https://allo-les-anges.github.io/Maskarat/assets/images/gallery/birdie_blue.png" 
-                     alt="Oiseaux décoratifs" 
-                     class="h-8 w-auto ml-2 md:h-10">
-            </div>
-            
-            <div class="hidden md:flex space-x-8">
-                <a href="#about" class="nav-link text-gray-700 hover:text-[#c8a97e] transition">Over ons</a>
-                <a href="#vision" class="nav-link text-gray-700 hover:text-[#c8a97e] transition">Visie</a>
-                <a href="#location" class="nav-link text-gray-700 hover:text-[#c8a97e] transition">Locatie</a>
-                <a href="#properties" class="nav-link text-gray-700 hover:text-[#c8a97e] transition">Woningen</a>
-                <a href="#gallery" class="nav-link text-gray-700 hover:text-[#c8a97e] transition">Gallerij</a>
-                <a href="#contact" class="nav-link text-gray-700 hover:text-[#c8a97e] transition">Contact</a>
-            </div>
-            <button class="md:hidden focus:outline-none" id="menu-toggle">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </button>
-        </div>
-        <div class="md:hidden hidden bg-white w-full" id="mobile-menu">
-            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
-                <a href="#about" class="text-gray-700 hover:text-[#c8a97e] py-2 transition">Over ons</a>
-                <a href="#vision" class="text-gray-700 hover:text-[#c8a97e] py-2 transition">Visie</a>
-                <a href="#location" class="text-gray-700 hover:text-[#c8a97e] py-2 transition">Locatie</a>
-                <a href="#properties" class="text-gray-700 hover:text-[#c8a97e] py-2 transition">Woningen</a>
-                <a href="#gallery" class="text-gray-700 hover:text-[#c8a97e] py-2 transition">Gallerij</a>
-                <a href="#contact" class="text-gray-700 hover:text-[#c8a97e] py-2 transition">Contact</a>
-            </div>
-        </div>
-    </nav>
+    <nav class="fixed w-full z-50 bg-white bg-opacity-95 shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-gray-800">
+                Mascarat <span class="text-[#c8a97e]">Suites</span>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="nav-link text-gray-700 hover:text-[#c8a97e] transition">Over ons</a>
+                <a href="#vision" class="nav-link text-gray-700 hover:text-[#c8a97e] transition">Visie</a>
+                <a href="#location" class="nav-link text-gray-700 hover:text-[#c8a97e] transition">Locatie</a>
+                <a href="#properties" class="nav-link text-gray-700 hover:text-[#c8a97e] transition">Woningen</a>
+                <a href="#gallery" class="nav-link text-gray-700 hover:text-[#c8a97e] transition">Gallerij</a>
+                <a href="#contact" class="nav-link text-gray-700 hover:text-[#c8a97e] transition">Contact</a>
+            </div>
+            <button class="md:hidden focus:outline-none" id="menu-toggle">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="md:hidden hidden bg-white w-full" id="mobile-menu">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="#about" class="text-gray-700 hover:text-[#c8a97e] py-2 transition">Over ons</a>
+                <a href="#vision" class="text-gray-700 hover:text-[#c8a97e] py-2 transition">Visie</a>
+                <a href="#location" class="text-gray-700 hover:text-[#c8a97e] py-2 transition">Locatie</a>
+                <a href="#properties" class="text-gray-700 hover:text-[#c8a97e] py-2 transition">Woningen</a>
+                <a href="#gallery" class="text-gray-700 hover:text-[#c8a97e] py-2 transition">Gallerij</a>
+                <a href="#contact" class="text-gray-700 hover:text-[#c8a97e] py-2 transition">Contact</a>
+            </div>
+        </div>
+    </nav>
 
-    <section class="hero-section flex items-center justify-center text-center text-white pt-16">
-        <div class="birds-container">
-            <div class="bird"></div>
-            <div class="bird"></div>
-        </div>
-        <div class="container mx-auto px-4">
-            <h1 class="text-5xl md:text-7xl font-bold mb-6">Mascarat Suites</h1>
-            <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto">Nature's beauty.</p>
-            <a href="#about" class="btn-primary px-8 py-3 rounded-full text-white font-medium hover:shadow-lg">Ontdek meer</a>
-            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 scroll-down">
-                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                </svg>
-            </div>
-        </div>
-    </section>
+    <section class="hero-section flex items-center justify-center text-center text-white">
+        <div class="birds-container">
+            <div class="bird"></div>
+            <div class="bird"></div>
+        </div>
+        <div class="container mx-auto px-4">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6">Mascarat Suites</h1>
+            <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto">Nature's beauty.</p>
+            <a href="#about" class="btn-primary px-8 py-3 rounded-full text-white font-medium hover:shadow-lg">Ontdek meer</a>
+            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 scroll-down">
+                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </div>
+        </div>
+    </section>
     <!-- About Section -->
     <section id="about" class="py-20 bg-white">
     <div class="container mx-auto px-4">
