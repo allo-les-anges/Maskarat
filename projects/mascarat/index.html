@@ -6,6 +6,7 @@
     <title>Mascarat Suites | Luxury Living</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap">
+    
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
@@ -18,18 +19,9 @@
             font-family: 'Playfair Display', serif;
         }
         
-        <section class="hero-section relative h-screen overflow-hidden">
-    <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0">
-        <source src="https://allo-les-anges.github.io/Maskarat/assets/images/gallery/video_mascarat.mp4" type="video/mp4">
-        <img src="https://i.postimg.cc/W4fcccWL/32-resultat.jpg" alt="Image de fallback pour la vidéo du projet Mascarat">
-    </video>
-
-    <div class="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-4">
-        <h1 class="text-3xl md:text-5xl font-bold mb-4">Mascarat Suites: Luxe et Sérénité</h1>
-        <p class="text-lg md:text-xl mb-8">Découvrez votre refuge exclusif en bord de mer.</p>
-        </div>
-
-    </section>
+        /* Les styles pour .hero-section si vous aviez des CSS spécifiques en dehors de Tailwind ici,
+           mais les propriétés que vous avez montrées étaient de l'HTML inséré par erreur.
+           Les classes Tailwind gèrent déjà la plupart de ce qui est nécessaire pour la vidéo. */
         
         .section-title {
             position: relative;
@@ -135,59 +127,57 @@
         /* --- Styles pour les oiseaux animés --- */
         .birds-container {
             position: absolute;
-            top: 20px; /* Ajustez la position verticale */
-            right: 20px; /* Ajustez la position horizontale */
-            width: 100px; /* Largeur totale du conteneur des oiseaux */
-            height: 100px; /* Hauteur totale du conteneur des oiseaux */
-            pointer-events: none; /* Pour que les oiseaux ne bloquent pas les clics si besoin */
-            z-index: 10; /* Assurez-vous qu'ils sont au-dessus du contenu */
+            top: 20px;
+            right: 20px;
+            width: 100px;
+            height: 100px;
+            pointer-events: none;
+            z-index: 10; 
         }
 
         .bird {
             position: absolute;
-            width: 30px; /* Largeur de chaque oiseau */
-            height: 20px; /* Augmente la hauteur pour plus de place pour l'animation */
-            background: transparent; /* Pas de fond */
-            overflow: visible; /* Laisser les ailes "dépasser" si elles bougent */
+            width: 30px;
+            height: 20px;
+            background: transparent;
+            overflow: visible;
         }
 
         .bird::before,
         .bird::after {
             content: '';
             position: absolute;
-            bottom: 0; /* Positionne les ailes en bas du conteneur du bird */
-            width: 50%; /* Chaque trait du V fait la moitié de la largeur */
-            height: 2px; /* Épaisseur du trait */
-            background-color: white; /* Couleur des oiseaux */
-            /* MODIFICATION CLÉ : transform-origin en bas pour un meilleur pivotement */
+            bottom: 0;
+            width: 50%;
+            height: 2px;
+            background-color: white;
             transform-origin: bottom;
         }
 
         .bird::before {
-    left: 0;
-    transform: skewY(25deg);
-    animation: wingLeft 1s infinite ease-in-out;
-}
+            left: 0;
+            transform: skewY(25deg);
+            animation: wingLeft 1s infinite ease-in-out;
+        }
 
-.bird::after {
-    right: 0;
-    transform: skewY(-25deg);
-    animation: wingRight 1s infinite ease-in-out;
-}
-
+        .bird::after {
+            right: 0;
+            transform: skewY(-25deg);
+            animation: wingRight 1s infinite ease-in-out;
+        }
 
         /* Positions individuelles des oiseaux */
         .bird:nth-child(1) {
             top: 0;
             right: 0;
-            animation: fly 2s infinite ease-in-out; /* Animation principale de vol */
+            animation: fly 2s infinite ease-in-out;
         }
 
         .bird:nth-child(2) {
-            top: 30px; /* Décalage pour le deuxième oiseau */
+            top: 30px;
             right: 20px;
-            animation: fly 2.5s infinite ease-in-out 0.5s; /* Animation décalée pour un effet plus naturel */
-            transform: scale(0.8); /* Plus petit pour l'effet de perspective */
+            animation: fly 2.5s infinite ease-in-out 0.5s;
+            transform: scale(0.8);
             opacity: 0.8;
         }
 
@@ -197,7 +187,7 @@
                 transform: translateY(0);
             }
             25% {
-                transform: translateY(-5px); /* Monte légèrement */
+                transform: translateY(-5px);
             }
             50% {
                 transform: translateY(0);
@@ -207,17 +197,17 @@
             }
         }
 
-        /* MODIFICATION CLÉ : Nouvelles keyframes pour un battement plus visible */
+        /* Nouvelles keyframes pour un battement plus visible */
         @keyframes wingLeft {
-            0% { transform: skewY(25deg); } /* Ailes un peu plus ouvertes */
-            50% { transform: skewY(0deg); }  /* Ailes se rapprochent (battement vers le haut) */
-            100% { transform: skewY(25deg); } /* Ailes reviennent à la position ouverte */
+            0% { transform: skewY(25deg); }
+            50% { transform: skewY(0deg); }
+            100% { transform: skewY(25deg); }
         }
 
         @keyframes wingRight {
-            0% { transform: skewY(-25deg); } /* Ailes un peu plus ouvertes */
-            50% { transform: skewY(0deg); }  /* Ailes se rapprochent (battement vers le haut) */
-            100% { transform: skewY(-25deg); } /* Ailes reviennent à la position ouverte */
+            0% { transform: skewY(-25deg); }
+            50% { transform: skewY(0deg); }
+            100% { transform: skewY(-25deg); }
         }
 
         /* Responsive adjustments for smaller screens if needed */
@@ -238,10 +228,23 @@
                 transform: scale(0.7);
             }
         }
-
     </style>
 </head>
 <body>
+    <section class="hero-section relative h-screen overflow-hidden">
+        <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+            <source src="https://allo-les-anges.github.io/Maskarat/assets/images/gallery/video_mascarat.mp4" type="video/mp4">
+            <img src="https://i.postimg.cc/W4fcccWL/32-resultat.jpg" alt="Image de fallback pour la vidéo du projet Mascarat">
+        </video>
+
+        <div class="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-4">
+            <h1 class="text-3xl md:text-5xl font-bold mb-4">Mascarat Suites: Luxe et Sérénité</h1>
+            <p class="text-lg md:text-xl mb-8">Découvrez votre refuge exclusif en bord de mer.</p>
+            </div>
+
+        </section>
+
+    </body>
     <nav class="fixed w-full z-50 bg-white bg-opacity-95 shadow-sm">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold text-gray-800">
