@@ -20,12 +20,14 @@
         
         .hero-section {
             background: 
-                linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), /* Léger voile sombre pour la lisibilité du texte */
-                url("https://i.postimg.cc/W4fcccWL/32-resultat.jpg") no-repeat center center/cover; /* Ajout de no-repeat center center/cover */
+                linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+                url("https://i.postimg.cc/W4fcccWL/32-resultat.jpg");
+            background-size: cover;
+            background-position: center;
             height: 100vh;
-            /* Important pour le positionnement absolu des éléments enfants */
+            /* Important pour le positionnement absolu des oiseaux */
             position: relative; 
-            overflow: hidden;
+            overflow: hidden; /* Pour s'assurer que les oiseaux ne débordent pas si trop grands */
         }
         
         .section-title {
@@ -129,34 +131,34 @@
             }
         }
 
-        /* Les styles pour les oiseaux animés ne sont plus utilisés avec l'image statique,
-           mais sont conservés ici au cas où vous les réutiliseriez. */
+        /* --- Styles pour les oiseaux animés --- */
         .birds-container {
             position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 100px;
-            height: 100px;
-            pointer-events: none;
-            z-index: 10; 
+            top: 20px; /* Ajustez la position verticale */
+            right: 20px; /* Ajustez la position horizontale */
+            width: 100px; /* Largeur totale du conteneur des oiseaux */
+            height: 100px; /* Hauteur totale du conteneur des oiseaux */
+            pointer-events: none; /* Pour que les oiseaux ne bloquent pas les clics si besoin */
+            z-index: 10; /* Assurez-vous qu'ils sont au-dessus du contenu */
         }
 
         .bird {
             position: absolute;
-            width: 30px;
-            height: 20px;
-            background: transparent;
-            overflow: visible;
+            width: 30px; /* Largeur de chaque oiseau */
+            height: 20px; /* Augmente la hauteur pour plus de place pour l'animation */
+            background: transparent; /* Pas de fond */
+            overflow: visible; /* Laisser les ailes "dépasser" si elles bougent */
         }
 
         .bird::before,
         .bird::after {
             content: '';
             position: absolute;
-            bottom: 0;
-            width: 50%;
-            height: 2px;
-            background-color: white;
+            bottom: 0; /* Positionne les ailes en bas du conteneur du bird */
+            width: 50%; /* Chaque trait du V fait la moitié de la largeur */
+            height: 2px; /* Épaisseur du trait */
+            background-color: white; /* Couleur des oiseaux */
+            /* MODIFICATION CLÉ : transform-origin en bas pour un meilleur pivotement */
             transform-origin: bottom;
         }
 
@@ -177,14 +179,14 @@
         .bird:nth-child(1) {
             top: 0;
             right: 0;
-            animation: fly 2s infinite ease-in-out;
+            animation: fly 2s infinite ease-in-out; /* Animation principale de vol */
         }
 
         .bird:nth-child(2) {
-            top: 30px;
+            top: 30px; /* Décalage pour le deuxième oiseau */
             right: 20px;
-            animation: fly 2.5s infinite ease-in-out 0.5s;
-            transform: scale(0.8);
+            animation: fly 2.5s infinite ease-in-out 0.5s; /* Animation décalée pour un effet plus naturel */
+            transform: scale(0.8); /* Plus petit pour l'effet de perspective */
             opacity: 0.8;
         }
 
@@ -194,7 +196,7 @@
                 transform: translateY(0);
             }
             25% {
-                transform: translateY(-5px);
+                transform: translateY(-5px); /* Monte légèrement */
             }
             50% {
                 transform: translateY(0);
@@ -204,17 +206,17 @@
             }
         }
 
-        /* Nouvelles keyframes pour un battement plus visible */
+        /* MODIFICATION CLÉ : Nouvelles keyframes pour un battement plus visible */
         @keyframes wingLeft {
-            0% { transform: skewY(25deg); }
-            50% { transform: skewY(0deg); }
-            100% { transform: skewY(25deg); }
+            0% { transform: skewY(25deg); } /* Ailes un peu plus ouvertes */
+            50% { transform: skewY(0deg); }  /* Ailes se rapprochent (battement vers le haut) */
+            100% { transform: skewY(25deg); } /* Ailes reviennent à la position ouverte */
         }
 
         @keyframes wingRight {
-            0% { transform: skewY(-25deg); }
-            50% { transform: skewY(0deg); }
-            100% { transform: skewY(-25deg); }
+            0% { transform: skewY(-25deg); } /* Ailes un peu plus ouvertes */
+            50% { transform: skewY(0deg); }  /* Ailes se rapprochent (battement vers le haut) */
+            100% { transform: skewY(-25deg); } /* Ailes reviennent à la position ouverte */
         }
 
         /* Responsive adjustments for smaller screens if needed */
@@ -271,7 +273,11 @@
     </nav>
 
     <section class="hero-section flex items-center justify-center text-center text-white">
-                <div class="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-4">
+        <div class="birds-container">
+            <div class="bird"></div>
+            <div class="bird"></div>
+        </div>
+        <div class="container mx-auto px-4">
             <h1 class="text-5xl md:text-7xl font-bold mb-6">Mascarat Suites</h1>
             <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto">Nature's beauty.</p>
             <a href="#about" class="btn-primary px-8 py-3 rounded-full text-white font-medium hover:shadow-lg">Ontdek meer</a>
@@ -281,11 +287,8 @@
                 </svg>
             </div>
         </div>
-
-                <img src="https://allo-les-anges.github.io/Maskarat/assets/images/gallery/birdie_black.png" 
-             alt="Oiseau décoratif noir" 
-             class="absolute top-4 right-4 z-20 w-24 h-auto md:w-32 lg:w-40 xl:w-48">
     </section>
+    
     <!-- About Section -->
     <section id="about" class="py-20 bg-white">
     <div class="container mx-auto px-4">
