@@ -17,6 +17,11 @@
         h1, h2, h3, h4, h5 {
             font-family: 'Playfair Display', serif;
         }
+
+        /* Nouvelle classe pour appliquer Playfair Display spécifiquement au logo dans la nav */
+        .font-playfair-display {
+            font-family: 'Playfair Display', serif;
+        }
         
         .hero-section {
             background: 
@@ -130,92 +135,6 @@
             }
         }
 
-        /* Styles for animated birds are removed as per previous turn's suggestion
-           for using a static image. Keeping them commented for reference. */
-        /*
-        .birds-container {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 100px;
-            height: 100px;
-            pointer-events: none;
-            z-index: 10;
-        }
-
-        .bird {
-            position: absolute;
-            width: 30px;
-            height: 20px;
-            background: transparent;
-            overflow: visible;
-        }
-
-        .bird::before,
-        .bird::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            width: 50%;
-            height: 2px;
-            background-color: white;
-            transform-origin: bottom;
-        }
-
-        .bird::before {
-    left: 0;
-    transform: skewY(25deg);
-    animation: wingLeft 1s infinite ease-in-out;
-}
-
-.bird::after {
-    right: 0;
-    transform: skewY(-25deg);
-    animation: wingRight 1s infinite ease-in-out;
-}
-
-        .bird:nth-child(1) {
-            top: 0;
-            right: 0;
-            animation: fly 2s infinite ease-in-out;
-        }
-
-        .bird:nth-child(2) {
-            top: 30px;
-            right: 20px;
-            animation: fly 2.5s infinite ease-in-out 0.5s;
-            transform: scale(0.8);
-            opacity: 0.8;
-        }
-
-        @keyframes fly {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            25% {
-                transform: translateY(-5px);
-            }
-            50% {
-                transform: translateY(0);
-            }
-            75% {
-                transform: translateY(-2px);
-            }
-        }
-
-        @keyframes wingLeft {
-            0% { transform: skewY(25deg); }
-            50% { transform: skewY(0deg); }
-            100% { transform: skewY(25deg); }
-        }
-
-        @keyframes wingRight {
-            0% { transform: skewY(-25deg); }
-            50% { transform: skewY(0deg); }
-            100% { transform: skewY(-25deg); }
-        }
-        */
-
         @media (max-width: 768px) {
             .birds-container {
                 top: 10px;
@@ -240,7 +159,7 @@
     <nav class="fixed w-full z-50 bg-white bg-opacity-95 shadow-sm">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
                         <div class="flex items-center">
-                <a href="#" class="text-2xl font-bold text-gray-800">
+                <a href="#" class="text-2xl font-bold text-gray-800 font-playfair-display">
                     Mascarat <span class="text-[#c8a97e]">Suites</span>
                 </a>
                 <img src="https://allo-les-anges.github.io/Maskarat/assets/images/gallery/birdie_blue.png" 
@@ -274,7 +193,7 @@
         </div>
     </nav>
 
-    <section class="hero-section flex items-center justify-center text-center text-white">
+    <section class="hero-section flex items-center justify-center text-center text-white pt-16">
         <div class="birds-container">
             <div class="bird"></div>
             <div class="bird"></div>
@@ -289,7 +208,7 @@
                 </svg>
             </div>
         </div>
-    </section>
+    </section>
     <!-- About Section -->
     <section id="about" class="py-20 bg-white">
     <div class="container mx-auto px-4">
