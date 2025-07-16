@@ -34,23 +34,22 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 120%;
+            width: 100%; /* Changed to 100% to correctly apply zoom from here */
             height: 100%;
+            /* Corrected image path to ensure no extra .jpeg */
             background-image: url("https://allo-les-anges.github.io/Maskarat/projects/halepo/gallery/background_halepo.jpg");
             background-size: cover;
             background-position: center;
-            animation: panBackground 30s ease-in-out infinite alternate;
+            animation: zoomBackground 30s ease-in-out infinite alternate; /* Updated animation name */
+            transform-origin: center center; /* Ensures zoom is from the center */
         }
 
-        @keyframes panBackground {
+        @keyframes zoomBackground { /* Renamed animation for zooming */
             0% {
-                transform: translateX(0) scale(1.05);
-            }
-            50% {
-                transform: translateX(-5%) scale(1.1);
+                transform: scale(1); /* Start at original size */
             }
             100% {
-                transform: translateX(-10%) scale(1.15);
+                transform: scale(1.2); /* Zoom in to 120% */
             }
         }
 
@@ -181,25 +180,6 @@
         .footer a:hover {
             color: var(--sand); /* Une couleur légèrement différente au survol pour un effet interactif */
         }
-
-        /* Style for the original back button (commented out as you removed it) */
-        /* .back-button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: var(--sand);
-            color: var(--brown);
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-            font-weight: bold;
-            letter-spacing: 1px;
-            z-index: 10;
-        }
-
-        .back-button:hover {
-            background-color: #c09e73;
-        } */
 
         /* New style for the discreet button */
         .discreet-back-button {
