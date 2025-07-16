@@ -171,6 +171,17 @@
             text-align: center;
         }
 
+        /* Styles pour les liens du pied de page */
+        .footer a {
+            color: var(--cream); /* Applique la couleur crème définie pour le pied de page */
+            text-decoration: none; /* Enlève le soulignement par défaut des liens */
+            transition: color 0.3s ease; /* Ajoute une transition douce au survol */
+        }
+
+        .footer a:hover {
+            color: var(--sand); /* Une couleur légèrement différente au survol pour un effet interactif */
+        }
+
         /* Style for the original back button (commented out as you removed it) */
         /* .back-button {
             display: inline-block;
@@ -273,22 +284,16 @@
         </section>
     </main>
 
-    .footer {
-    background-color: var(--brown);
-    color: var(--cream); /* C'est cette couleur que vous voulez pour les liens */
-    padding: 2rem;
-    text-align: center;
-}
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Halepo. Tous droits réservés.</p>
+            <nav>
+                <a href="#">Contact</a> |
+                <a href="#">Politique de confidentialité</a> |
+                <a href="#">Conditions</a>
+            </nav>
+        </div>
+    </footer>
 
-.footer a { /* C'est la nouvelle règle à ajouter */
-    color: var(--cream); /* Applique la couleur crème définie pour le pied de page */
-    text-decoration: none; /* Enlève le soulignement par défaut des liens */
-    transition: color 0.3s ease; /* Ajoute une transition douce au survol */
-}
-
-.footer a:hover { /* Optionnel : changer la couleur au survol */
-    color: var(--sand); /* Une couleur légèrement différente au survol pour un effet interactif */
-}
-
-    </body>
+</body>
 </html>
