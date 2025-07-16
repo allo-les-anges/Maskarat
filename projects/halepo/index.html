@@ -110,6 +110,7 @@
             letter-spacing: 2px;
             text-transform: uppercase;
             border-radius: 2px;
+            z-index: 10; /* Ensure it's above the overlay */
         }
 
         .scroll-indicator {
@@ -170,7 +171,7 @@
             text-align: center;
         }
 
-        /* Style for the new button */
+        /* Style for the original back button */
         .back-button {
             display: inline-block;
             margin-top: 20px;
@@ -182,10 +183,37 @@
             transition: background-color 0.3s ease;
             font-weight: bold;
             letter-spacing: 1px;
+            z-index: 10;
         }
 
         .back-button:hover {
             background-color: #c09e73; /* A slightly darker sand color on hover */
+        }
+
+        /* New style for the discreet button */
+        .discreet-back-button {
+            position: absolute;
+            /* Calculate top based on .coming-soon's height and position */
+            /* Assuming .coming-soon is ~2rem tall (0.5rem padding top + font + 0.5rem padding bottom) */
+            top: calc(2rem + 2rem + 0.5rem); /* 2rem (coming-soon top) + 2rem (estimated coming-soon height) + 0.5rem (margin) */
+            right: 2rem;
+            background: none; /* No background */
+            color: var(--cream); /* Text color */
+            border: 1px solid var(--cream); /* Thin border matching cream */
+            padding: 0.4rem 1rem; /* Smaller padding */
+            font-size: 0.7rem; /* Smaller font size */
+            text-decoration: none;
+            border-radius: 2px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            z-index: 10; /* Ensure it's above overlay */
+        }
+
+        .discreet-back-button:hover {
+            background-color: rgba(248, 239, 224, 0.1); /* Slight translucent background on hover */
+            color: var(--sand); /* Change text color on hover for contrast */
+            border-color: var(--sand); /* Change border color on hover */
         }
 
 
@@ -213,6 +241,7 @@
             <h2>Luxury Living in Altea Hills</h2>
             <a href="https://www.amaru-resorts.com/projects/" class="back-button">Retour aux Projets</a>
             <div class="coming-soon">COMING SOON</div>
+            <a href="https://www.amaru-resorts.com/projects/" class="discreet-back-button">Découvrir nos autres projets</a>
             <div class="scroll-indicator">
                 <span>Scroll Down</span>
                 <i class="fas fa-chevron-down"></i> </div>
