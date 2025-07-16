@@ -170,6 +170,25 @@
             text-align: center;
         }
 
+        /* Style for the new button */
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: var(--sand);
+            color: var(--brown);
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .back-button:hover {
+            background-color: #c09e73; /* A slightly darker sand color on hover */
+        }
+
+
         /* Basic responsive adjustments */
         @media (min-width: 768px) {
             .info-section .row {
@@ -192,6 +211,7 @@
         <div class="content-container">
             <h1 class="logo">HALEPO</h1>
             <h2>Luxury Living in Altea Hills</h2>
+            <a href="https://www.amaru-resorts.com/projects/" class="back-button">Retour aux Projets</a>
             <div class="coming-soon">COMING SOON</div>
             <div class="scroll-indicator">
                 <span>Scroll Down</span>
@@ -237,4 +257,3 @@
 
     </body>
 </html>
-```
