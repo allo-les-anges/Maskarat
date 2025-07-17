@@ -167,32 +167,33 @@
   </style>
 </section>
 
-    <section id="location" class="py-20 bg-[#F8EFE0]">
-  <div class="container mx-auto px-4">
-    <div class="grid md:grid-cols-2 gap-12 items-center">
-      <!-- Image avec zoom -->
-      <div class="relative overflow-hidden rounded-xl shadow-lg h-[300px] md:h-[400px]">
-        <div class="absolute inset-0 bg-cover bg-center scale-110 animate-zoom" style="background-image: url('https://raw.githubusercontent.com/allo-les-anges/Maskarat/main/projects/manilva/gallery/M-image-004.jpg'); filter: brightness(1.1);"></div>
-      </div>
+    <section id="location" class="relative h-screen flex items-center justify-center overflow-hidden">
+  <!-- Image de fond avec zoom -->
+  <div class="absolute inset-0 bg-cover bg-center animate-zoom" style="background-image: url('https://raw.githubusercontent.com/allo-les-anges/Maskarat/main/projects/manilva/gallery/M-image-004.jpg'); z-index: -1;"></div>
 
-      <!-- Texte -->
-      <div class="text-left">
-        <h2 class="text-3xl md:text-4xl font-bold text-[#482E1D] mb-4">Prime Location</h2>
+  <!-- Overlay semi-transparent -->
+  <div class="absolute inset-0 bg-[#F8EFE0]/80 z-0"></div>
+
+  <!-- Contenu -->
+  <div class="container mx-auto px-6 relative z-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div class="bg-white bg-opacity-80 backdrop-blur-md rounded-2xl p-8 shadow-lg">
+        <h2 class="text-4xl font-bold text-[#482E1D] mb-4">Prime Location</h2>
         <p class="text-[#482E1D] text-lg mb-6">
           The villa offers a perfect blend of unspoiled natural tranquility, local amenities within easy reach, and an authentic Andalusian coastal experience ideal for those seeking relaxation with convenient access to shops, restaurants, and leisure activities.
         </p>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
-          <div class="bg-white p-4 rounded-lg shadow text-[#482E1D]">
-            <h3 class="font-bold text-[#D3B285] mb-1">Distance to Airport</h3>
-            <p>90 km</p>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="bg-[#F8EFE0] border border-[#D3B285] rounded-xl p-4 text-center shadow">
+            <h3 class="font-semibold text-[#D3B285] mb-1 text-sm">Airport</h3>
+            <p class="text-[#482E1D] font-bold text-lg">90 km</p>
           </div>
-          <div class="bg-white p-4 rounded-lg shadow text-[#482E1D]">
-            <h3 class="font-bold text-[#D3B285] mb-1">Distance to Port</h3>
-            <p>2,600 m</p>
+          <div class="bg-[#F8EFE0] border border-[#D3B285] rounded-xl p-4 text-center shadow">
+            <h3 class="font-semibold text-[#D3B285] mb-1 text-sm">Port</h3>
+            <p class="text-[#482E1D] font-bold text-lg">2,600 m</p>
           </div>
-          <div class="bg-white p-4 rounded-lg shadow text-[#482E1D]">
-            <h3 class="font-bold text-[#D3B285] mb-1">Distance to Beach</h3>
-            <p>1,500 m</p>
+          <div class="bg-[#F8EFE0] border border-[#D3B285] rounded-xl p-4 text-center shadow">
+            <h3 class="font-semibold text-[#D3B285] mb-1 text-sm">Beach</h3>
+            <p class="text-[#482E1D] font-bold text-lg">1,500 m</p>
           </div>
         </div>
       </div>
@@ -200,11 +201,11 @@
   </div>
 </section>
 
-<!-- Animation CSS à ajouter dans <style> ou fichier CSS -->
+<!-- Zoom lent CSS -->
 <style>
 @keyframes zoomSlow {
   from {
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
   to {
     transform: scale(1.15);
@@ -212,8 +213,7 @@
 }
 
 .animate-zoom {
-  animation: zoomSlow 20s ease-in-out infinite alternate;
-  transition: transform 0.3s ease;
+  animation: zoomSlow 30s ease-in-out infinite alternate;
 }
 </style>
 
