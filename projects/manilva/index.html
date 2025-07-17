@@ -167,85 +167,35 @@
   </style>
 </section>
 
-    <section id="location" class="relative py-20">
-  <!-- Image de fond -->
-  <div class="absolute inset-0 bg-cover bg-center animate-zoom" style="background-image: url('https://raw.githubusercontent.com/allo-les-anges/Maskarat/main/projects/manilva/gallery/M-image-004.jpg'); z-index: -1;"></div>
-  <div class="absolute inset-0 bg-[#F8EFE0]/90 backdrop-blur-sm z-0"></div>
+    <section id="location" class="relative py-20 bg-fixed bg-center bg-cover" style="background-image: url('https://raw.githubusercontent.com/allo-les-anges/Maskarat/main/projects/manilva/gallery/M-image-004.jpg');">
+  <div class="absolute inset-0 bg-black bg-opacity-30"></div> <!-- Overlay -->
 
-  <!-- Contenu -->
-  <div class="container mx-auto px-4 relative z-10">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold text-[#482E1D] mb-4">Localisation idéale</h2>
-      <p class="text-[#482E1D] max-w-2xl mx-auto">À proximité de toutes les commodités tout en profitant d'un cadre naturel paisible.</p>
+  <div class="relative container mx-auto px-4">
+    <div class="text-center text-white mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Prime Location</h2>
+      <p class="max-w-2xl mx-auto text-[#F8EFE0]">
+        The villa offers a perfect blend of unspoiled natural tranquility, local amenities within easy reach, and an authentic Andalusian coastal experience ideal for those seeking relaxation with convenient access to shops, restaurants, and leisure activities.
+      </p>
       <div class="w-20 h-1 bg-[#D3B285] mx-auto mt-4"></div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-      <!-- Carte : Plage -->
-      <div class="bg-[#F8EFE0] p-6 rounded-lg shadow-md">
-        <div class="w-16 h-16 bg-[#D3B285]/20 rounded-full flex items-center justify-center mb-6 mx-auto">
-          <svg class="w-8 h-8 text-[#D3B285]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M2 20c2-2 4-2 6 0s4 2 6 0 4-2 6 0 4 2 6 0" />
-          </svg>
-        </div>
-        <h3 class="text-xl font-bold text-center text-[#482E1D] mb-2">Plage</h3>
-        <p class="text-[#482E1D] text-center">À seulement 1 500 mètres, profitez d’un accès direct à la plage pour des journées de détente au soleil.</p>
-        <p class="text-[#D3B285] font-bold text-center mt-4">1 500 m</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+      <div class="bg-[#F8EFE0] bg-opacity-95 p-6 rounded-lg shadow-lg">
+        <h3 class="text-xl font-bold text-[#482E1D] mb-2">Distance to Airport</h3>
+        <p class="text-[#365b6d]">90 km</p>
       </div>
-
-      <!-- Carte : Port -->
-      <div class="bg-[#F8EFE0] p-6 rounded-lg shadow-md">
-        <div class="w-16 h-16 bg-[#D3B285]/20 rounded-full flex items-center justify-center mb-6 mx-auto">
-          <svg class="w-8 h-8 text-[#D3B285]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <circle cx="12" cy="5" r="1" />
-            <path d="M12 6v13M5 12H2a10 10 0 0020 0h-3" />
-          </svg>
-        </div>
-        <h3 class="text-xl font-bold text-center text-[#482E1D] mb-2">Port</h3>
-        <p class="text-[#482E1D] text-center">À seulement 2 600 mètres, le port offre des vues imprenables sur les yachts de luxe.</p>
-        <p class="text-[#D3B285] font-bold text-center mt-4">2 600 m</p>
+      <div class="bg-[#F8EFE0] bg-opacity-95 p-6 rounded-lg shadow-lg">
+        <h3 class="text-xl font-bold text-[#482E1D] mb-2">Distance to Port</h3>
+        <p class="text-[#365b6d]">2,600 meters</p>
       </div>
-
-      <!-- Carte : Commerces -->
-      <div class="bg-[#F8EFE0] p-6 rounded-lg shadow-md">
-        <div class="w-16 h-16 bg-[#D3B285]/20 rounded-full flex items-center justify-center mb-6 mx-auto">
-          <svg class="w-8 h-8 text-[#D3B285]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-          </svg>
-        </div>
-        <h3 class="text-xl font-bold text-center text-[#482E1D] mb-2">Commerces</h3>
-        <p class="text-[#482E1D] text-center">Des commerces de proximité accessibles en quelques minutes pour tous vos besoins du quotidien.</p>
-        <p class="text-[#D3B285] font-bold text-center mt-4">Proche</p>
-      </div>
-
-      <!-- Carte : Aéroport -->
-      <div class="bg-[#F8EFE0] p-6 rounded-lg shadow-md">
-        <div class="w-16 h-16 bg-[#D3B285]/20 rounded-full flex items-center justify-center mb-6 mx-auto">
-          <svg class="w-8 h-8 text-[#D3B285]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-          </svg>
-        </div>
-        <h3 class="text-xl font-bold text-center text-[#482E1D] mb-2">Aéroport</h3>
-        <p class="text-[#482E1D] text-center">À seulement 90 km, vous rejoignez l’aéroport international en moins d'une heure.</p>
-        <p class="text-[#D3B285] font-bold text-center mt-4">90 km</p>
+      <div class="bg-[#F8EFE0] bg-opacity-95 p-6 rounded-lg shadow-lg">
+        <h3 class="text-xl font-bold text-[#482E1D] mb-2">Distance to Beach</h3>
+        <p class="text-[#365b6d]">1,500 meters</p>
       </div>
     </div>
   </div>
 </section>
 
-<style>
-@keyframes zoomSlow {
-  from {
-    transform: scale(1.05);
-  }
-  to {
-    transform: scale(1.1);
-  }
-}
-.animate-zoom {
-  animation: zoomSlow 40s ease-in-out infinite alternate;
-}
-</style>
 
     <section id="project-details" class="py-20 bg-white">
         <div class="container mx-auto px-4">
