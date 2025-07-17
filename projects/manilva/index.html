@@ -105,47 +105,52 @@
 <section id="hero"
     class="relative h-screen flex items-center justify-center text-white overflow-hidden">
 
-    <div class="absolute inset-0 bg-no-repeat bg-cover animate-pan-zoom"
+    <!-- Image de fond avec zoom animé -->
+    <div class="absolute inset-0 bg-no-repeat bg-cover bg-center animate-zoom"
         style="
             background-image: url('https://raw.githubusercontent.com/allo-les-anges/Maskarat/main/projects/manilva/gallery/M-image-000.png');
-            filter: brightness(1.2);
+            filter: brightness(0.6);
         ">
     </div>
 
-    <div class="relative z-10 text-center">
-        <h1 class="text-4xl md:text-6xl font-bold mb-4">Viña Manilva</h1>
-        <p class="text-xl md:text-2xl">Manilva's Finest</p>
-        <a href="#about" class="btn-primary mt-8 inline-block px-8 py-3 rounded-full text-lg">Discover More</a>
+    <!-- Contenu texte -->
+    <div class="relative z-10 text-center px-4">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">Viña Manilva</h1>
+        <p class="text-xl md:text-2xl drop-shadow-md">Manilva's Finest</p>
+        <a href="#about" class="btn-primary mt-8 inline-block px-8 py-3 rounded-full text-lg bg-white text-black font-semibold">Discover More</a>
     </div>
 
+    <!-- Styles -->
     <style>
-        @keyframes pan-zoom {
+        @keyframes zoom {
             0% {
-                background-position: 100% center;
-                background-size: 120% auto;
-            }
-            50% {
-                background-position: 50% center;
-                background-size: 140% auto;
+                transform: scale(1);
             }
             100% {
-                background-position: 0% center;
-                background-size: 120% auto;
+                transform: scale(1.2);
             }
         }
 
-        .animate-pan-zoom {
-            animation: pan-zoom 60s ease-in-out infinite;
-            background-position: 100% center;
-            background-size: 120% auto;
+        .animate-zoom {
+            animation: zoom 60s ease-in-out infinite alternate;
+            background-size: cover;
+            background-position: center;
+            will-change: transform;
         }
 
-        /* Ajustement pour mobile */
+        /* Responsive : ajuster le zoom selon la taille d'écran */
         @media (max-width: 768px) {
-            .animate-pan-zoom {
-                animation: pan-zoom 60s ease-in-out infinite;
-                background-position: center center;
-                background-size: 150% auto;
+            .animate-zoom {
+                animation: zoom 60s ease-in-out infinite alternate;
+                background-size: 200% auto;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1.125rem;
             }
         }
     </style>
