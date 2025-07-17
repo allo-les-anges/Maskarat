@@ -17,6 +17,24 @@
         .nav-link.active {
             color: #c8a97e;
             font-weight: bold;
+
+.section-title {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 50px;
+  background-color: #000; /* ou #0e7490 par exemple pour une couleur plus douce */
+}
+
+            
         }
         .carousel-container {
             overflow: hidden;
