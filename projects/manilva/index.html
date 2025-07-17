@@ -93,11 +93,9 @@
 <section id="hero"
     class="relative h-screen flex items-center justify-center text-white overflow-hidden">
 
-    <div class="absolute inset-0 bg-no-repeat bg-cover animate-pan"
+    <div class="absolute inset-0 bg-no-repeat bg-cover animate-pan bg-position-responsive"
         style="
             background-image: url('https://raw.githubusercontent.com/allo-les-anges/Maskarat/main/projects/manilva/gallery/M-image-000.png');
-            background-size: 130% auto;
-            background-position: 100% center;
             filter: brightness(1.2);
         ">
     </div>
@@ -120,6 +118,16 @@
 
         .animate-pan {
             animation: pan 60s linear infinite;
+            background-size: 130% auto; /* default pour desktop */
+            background-position: 100% center;
+        }
+
+        /* Media query pour écrans plus petits */
+        @media (max-width: 768px) {
+            .animate-pan {
+                background-size: 200% auto; /* plus zoomé, donc l'image paraît plus petite dans la zone visible */
+                background-position: center center;
+            }
         }
     </style>
 </section>
@@ -172,14 +180,13 @@
   style="background-image: url('https://raw.githubusercontent.com/allo-les-anges/Maskarat/main/projects/manilva/gallery/M-image-004.jpg'); z-index: 0; position: relative; background-attachment: fixed; transform: translateZ(0);">
 
   <div class="relative z-20 container mx-auto px-4">
-    <div class="text-center text-white mb-12">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">Prime Location</h2>
-      <p class="max-w-2xl mx-auto text-[#F8EFE0]">
-        The villa offers a perfect blend of unspoiled natural tranquility, local amenities within easy reach, and an authentic Andalusian coastal experience ideal for those seeking relaxation with convenient access to shops, restaurants, and leisure activities.
-      </p>
-      <div class="w-20 h-1 bg-[#D3B285] mx-auto mt-4 rounded"></div>
-    </div>
-
+    <div class="text-center text-white mb-12 px-6 py-4 rounded bg-black bg-opacity-30 max-w-3xl mx-auto" style="text-shadow: 0 1px 3px rgba(0,0,0,0.7);">
+  <h2 class="text-3xl md:text-4xl font-bold mb-4">Prime Location</h2>
+  <p class="max-w-2xl mx-auto text-[#F8EFE0]">
+    The villa offers a perfect blend of unspoiled natural tranquility, local amenities within easy reach, and an authentic Andalusian coastal experience ideal for those seeking relaxation with convenient access to shops, restaurants, and leisure activities.
+  </p>
+  <div class="w-20 h-1 bg-[#D3B285] mx-auto mt-4 rounded"></div>
+</div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
       <!-- Carte 1 -->
       <div
