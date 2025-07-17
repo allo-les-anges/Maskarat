@@ -105,13 +105,16 @@
 <section id="hero"
     class="relative h-screen flex items-center justify-center text-white overflow-hidden">
 
-    <!-- Image de fond avec zoom animé et filtre lumineux -->
+    <!-- Image de fond avec zoom -->
     <img
         src="https://raw.githubusercontent.com/allo-les-anges/Maskarat/main/projects/manilva/gallery/M-image-000.png"
         alt="Viña Manilva"
-        class="absolute inset-0 w-full h-full object-cover animate-zoom"
-        style="filter: brightness(0.85) contrast(1.1) saturate(1.1); z-index: 0;"
+        class="absolute inset-0 w-full h-full object-cover animate-zoom hero-bg"
+        style="z-index: 0;"
     >
+
+    <!-- Overlay sombre -->
+    <div class="absolute inset-0 bg-black bg-opacity-30 z-0"></div>
 
     <!-- Contenu texte -->
     <div class="relative z-10 text-center px-4">
@@ -123,12 +126,8 @@
     <!-- Styles -->
     <style>
         @keyframes zoom {
-            0% {
-                transform: scale(1);
-            }
-            100% {
-                transform: scale(1.2);
-            }
+            0% { transform: scale(1); }
+            100% { transform: scale(1.2); }
         }
 
         .animate-zoom {
@@ -136,17 +135,20 @@
             will-change: transform;
         }
 
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
+        @media (min-width: 768px) {
+            .hero-bg {
+                filter: brightness(1.1) contrast(1.15) saturate(1.2);
             }
+        }
 
-            p {
-                font-size: 1.125rem;
+        @media (max-width: 767px) {
+            .hero-bg {
+                filter: brightness(0.9) contrast(1.05) saturate(1.05);
             }
         }
     </style>
 </section>
+
 
 <section id="about" class="py-20 bg-white">
   <div class="container mx-auto px-4 flex flex-col md:flex-row items-center md:items-start gap-12">
@@ -293,7 +295,7 @@
       }
     }
     .animate-pan {
-      animation: pan 120s linear infinite;
+      animation: pan 180s linear infinite;
     }
   </style>
 </section>
