@@ -168,10 +168,10 @@
 </section>
 
     <section id="location" 
-  class="relative py-20 min-h-[600px] bg-fixed bg-center bg-cover overflow-visible"
-  style="background-image: url('https://raw.githubusercontent.com/allo-les-anges/Maskarat/main/projects/manilva/gallery/M-image-004.jpg'); animation: pan 60s linear infinite;">
+  class="relative py-20 min-h-[600px] bg-center bg-cover overflow-visible animate-pan"
+  style="background-image: url('https://raw.githubusercontent.com/allo-les-anges/Maskarat/main/projects/manilva/gallery/M-image-004.jpg'); z-index: 0; position: relative; background-attachment: fixed; transform: translateZ(0);">
 
-  <div class="relative z-10 container mx-auto px-4">
+  <div class="relative z-20 container mx-auto px-4">
     <div class="text-center text-white mb-12">
       <h2 class="text-3xl md:text-4xl font-bold mb-4">Prime Location</h2>
       <p class="max-w-2xl mx-auto text-[#F8EFE0]">
@@ -183,7 +183,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
       <!-- Carte 1 -->
       <div
-        class="p-6 rounded-lg shadow-lg relative z-20"
+        class="p-6 rounded-lg shadow-lg relative z-30"
         style="background-color: rgba(248, 239, 224, 0.95);">
         <div
           class="w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto"
@@ -202,7 +202,7 @@
 
       <!-- Carte 2 -->
       <div
-        class="p-6 rounded-lg shadow-lg relative z-20"
+        class="p-6 rounded-lg shadow-lg relative z-30"
         style="background-color: rgba(248, 239, 224, 0.95);">
         <div
           class="w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto"
@@ -222,7 +222,7 @@
 
       <!-- Carte 3 -->
       <div
-        class="p-6 rounded-lg shadow-lg relative z-20"
+        class="p-6 rounded-lg shadow-lg relative z-30"
         style="background-color: rgba(248, 239, 224, 0.95);">
         <div
           class="w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto"
@@ -241,7 +241,7 @@
 
       <!-- Carte 4 -->
       <div
-        class="p-6 rounded-lg shadow-lg relative z-20"
+        class="p-6 rounded-lg shadow-lg relative z-30"
         style="background-color: rgba(248, 239, 224, 0.95);">
         <div
           class="w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto"
@@ -268,6 +268,9 @@
       100% {
         background-position: 0% center;
       }
+    }
+    .animate-pan {
+      animation: pan 60s linear infinite;
     }
   </style>
 </section>
