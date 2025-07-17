@@ -17,25 +17,27 @@
         .nav-link.active {
             color: #c8a97e;
             font-weight: bold;
+        }
 
-.section-title {
-  position: relative;
-  display: inline-block;
-  padding-bottom: 0.5rem;
-}
+        .section-title {
+           position: relative;
+           display: inline-block;
+           padding-bottom: 0.75rem;
+           margin-bottom: 1.5rem;
+        }
 
 .section-title::after {
-  content: '';
+  content: "";
   position: absolute;
-  left: 0;
+  left: 50%;
   bottom: 0;
+  transform: translateX(-50%);
   height: 4px;
-  width: 50px;
-  background-color: #000; /* ou #0e7490 par exemple pour une couleur plus douce */
+  width: 60px;
+  background-color: #0e7490; /* à adapter à ta charte (ex : turquoise Altea) */
+  border-radius: 2px;
 }
 
-            
-        }
         .carousel-container {
             overflow: hidden;
             position: relative;
