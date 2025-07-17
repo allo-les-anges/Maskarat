@@ -61,34 +61,46 @@
 </head>
 <body class="font-sans text-gray-800">
 
-    <header class="bg-white shadow-md py-4 fixed w-full z-30">
-        <div class="container mx-auto px-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-[#365b6d]">Viña Manilva</a>
-            <nav class="hidden md:block">
-                <ul class="flex space-x-6">
-                    <li><a href="#about" class="nav-link text-gray-600 hover:text-[#c8a97e] transition">Introduction</a></li>
-                    <li><a href="#location" class="nav-link text-gray-600 hover:text-[#c8a97e] transition">Location</a></li>
-                    <li><a href="#project-details" class="nav-link text-gray-600 hover:text-[#c8a97e] transition">Project Details</a></li>
-                    <li><a href="#floorplans" class="nav-link text-gray-600 hover:text-[#c8a97e] transition">Floorplans</a></li>
-                    <li><a href="#technical-details" class="nav-link text-gray-600 hover:text-[#c8a97e] transition">Technical Details</a></li>
-                    <li><a href="#contact" class="nav-link text-gray-600 hover:text-[#c8a97e] transition">Contact</a></li>
-                </ul>
-            </nav>
-            <button id="menu-toggle" class="md:hidden text-gray-600 hover:text-[#c8a97e] focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-            </button>
-        </div>
-        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg mt-2">
-            <ul class="flex flex-col space-y-2 p-4">
-                <li><a href="#about" class="nav-link block text-gray-600 hover:text-[#c8a97e] transition">Introduction</a></li>
-                <li><a href="#location" class="nav-link block text-gray-600 hover:text-[#c8a97e] transition">Location</a></li>
-                <li><a href="#project-details" class="nav-link block text-gray-600 hover:text-[#c8a97e] transition">Project Details</a></li>
-                <li><a href="#floorplans" class="nav-link block text-gray-600 hover:text-[#c8a97e] transition">Floorplans</a></li>
-                <li><a href="#technical-details" class="nav-link block text-gray-600 hover:text-[#c8a97e] transition">Technical Details</a></li>
-                <li><a href="#contact" class="nav-link block text-gray-600 hover:text-[#c8a97e] transition">Contact</a></li>
-            </ul>
-        </div>
-    </header>
+    <header class="bg-white shadow-md py-4 fixed w-full z-30"> 
+  <div class="container mx-auto px-4 flex justify-between items-center">
+    <!-- Logo + texte -->
+    <a href="#" class="flex items-center space-x-3 text-[#365b6d] font-bold text-2xl">
+      <img src="https://raw.githubusercontent.com/allo-les-anges/Maskarat/main/projects/manilva/gallery/grapes_t.png" alt="Logo Viña Manilva" class="h-10 w-auto" />
+      <span>Viña Manilva</span>
+    </a>
+
+    <!-- Navigation desktop -->
+    <nav class="hidden md:block">
+      <ul class="flex space-x-6">
+        <li><a href="#about" class="nav-link text-gray-600 hover:text-[#c8a97e] transition">Introduction</a></li>
+        <li><a href="#location" class="nav-link text-gray-600 hover:text-[#c8a97e] transition">Location</a></li>
+        <li><a href="#project-details" class="nav-link text-gray-600 hover:text-[#c8a97e] transition">Project Details</a></li>
+        <li><a href="#floorplans" class="nav-link text-gray-600 hover:text-[#c8a97e] transition">Floorplans</a></li>
+        <li><a href="#technical-details" class="nav-link text-gray-600 hover:text-[#c8a97e] transition">Technical Details</a></li>
+        <li><a href="#contact" class="nav-link text-gray-600 hover:text-[#c8a97e] transition">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Bouton menu mobile -->
+    <button id="menu-toggle" class="md:hidden text-gray-600 hover:text-[#c8a97e] focus:outline-none">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Menu mobile -->
+  <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg mt-2">
+    <ul class="flex flex-col space-y-2 p-4">
+      <li><a href="#about" class="nav-link block text-gray-600 hover:text-[#c8a97e] transition">Introduction</a></li>
+      <li><a href="#location" class="nav-link block text-gray-600 hover:text-[#c8a97e] transition">Location</a></li>
+      <li><a href="#project-details" class="nav-link block text-gray-600 hover:text-[#c8a97e] transition">Project Details</a></li>
+      <li><a href="#floorplans" class="nav-link block text-gray-600 hover:text-[#c8a97e] transition">Floorplans</a></li>
+      <li><a href="#technical-details" class="nav-link block text-gray-600 hover:text-[#c8a97e] transition">Technical Details</a></li>
+      <li><a href="#contact" class="nav-link block text-gray-600 hover:text-[#c8a97e] transition">Contact</a></li>
+    </ul>
+  </div>
+</header>
 
 <section id="hero"
     class="relative h-screen flex items-center justify-center text-white overflow-hidden">
