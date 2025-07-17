@@ -125,14 +125,34 @@
 </section>
 
 
-    <section id="about" class="py-20 bg-white">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-8">Discover Viña Manilva</h2>
-            <p class="text-lg leading-relaxed max-w-3xl mx-auto">
-                [cite_start]Viña Manilva is an exclusive collection of elegant homes nestled between the Mediterranean Sea and the sun-drenched hills of Manilva, one of the Costa del Sol's best-kept secrets[cite: 10, 11]. [cite_start]The name Viña Manilva pays tribute to the region's famous Moscatel vineyards, which have shaped the land and culture for generations[cite: 12, 13]. This boutique development captures that same essence combining tradition, nature, and contemporary Mediterranean living. [cite_start]Welcome to Viña Manilva - where timeless charm meets modern elegance[cite: 14, 15].
-            </p>
-        </div>
-    </section>
+<section id="about" class="relative py-32 bg-white overflow-hidden">
+  <div class="absolute inset-0">
+    <div class="w-full h-full bg-cover bg-center brightness-[1.2] animate-pan bg-no-repeat" style="background-image: url('https://raw.githubusercontent.com/allo-les-anges/Maskarat/main/projects/manilva/gallery/M-image-001.png');"></div>
+    <div class="absolute inset-0 bg-white/60"></div> <!-- léger voile blanc -->
+  </div>
+  <div class="relative container mx-auto px-4 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-8">Discover Viña Manilva</h2>
+    <p class="text-lg leading-relaxed max-w-3xl mx-auto">
+      <em>Viña Manilva is an exclusive collection of elegant homes nestled between the Mediterranean Sea and the sun-drenched hills of Manilva, one of the Costa del Sol's best-kept secrets.</em><br><br>
+      <em>The name Viña Manilva pays tribute to the region's famous Moscatel vineyards, which have shaped the land and culture for generations.</em><br><br>
+      <em>This boutique development captures that same essence, combining tradition, nature, and contemporary Mediterranean living.</em><br><br>
+      <strong>Welcome to Viña Manilva – where timeless charm meets modern elegance.</strong>
+    </p>
+  </div>
+
+  <style>
+    @keyframes pan {
+      0% { background-position: 100% center; }
+      100% { background-position: 0% center; }
+    }
+
+    .animate-pan {
+      animation: pan 30s linear infinite;
+    }
+  </style>
+</section>
+
+
 
     <section id="location" class="py-20 bg-gray-100">
         <div class="container mx-auto px-4">
