@@ -180,14 +180,17 @@
     background-position: 0% center;
     animation: panBackground 60s linear infinite;
     filter: brightness(1.2);
+    position: relative;
+    z-index: 0;
   }
 </style>
 
 <section id="location" class="relative py-20 bg-fixed hero-bg-animated">
-  <!-- Overlay -->
-  <div class="absolute inset-0 bg-black bg-opacity-30 z-10"></div>
+  <!-- Overlay avec z-index bas -->
+  <div class="absolute inset-0 bg-black bg-opacity-30 z-0"></div>
 
-  <div class="relative container mx-auto px-4 z-20">
+  <!-- Contenu avec z-index plus haut -->
+  <div class="relative z-10 container mx-auto px-4">
     <div class="text-center text-white mb-12">
       <h2 class="text-3xl md:text-4xl font-bold mb-4">Prime Location</h2>
       <p class="max-w-2xl mx-auto text-[#F8EFE0]">
@@ -196,16 +199,16 @@
       <div class="w-20 h-1 bg-[#D3B285] mx-auto mt-4"></div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center z-20">
-      <div class="bg-[#F8EFE0] bg-opacity-95 p-6 rounded-lg shadow-lg z-20">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+      <div class="bg-[#F8EFE0] bg-opacity-95 p-6 rounded-lg shadow-lg">
         <h3 class="text-xl font-bold text-[#482E1D] mb-2">Distance to Airport</h3>
         <p class="text-[#365b6d]">90 km</p>
       </div>
-      <div class="bg-[#F8EFE0] bg-opacity-95 p-6 rounded-lg shadow-lg z-20">
+      <div class="bg-[#F8EFE0] bg-opacity-95 p-6 rounded-lg shadow-lg">
         <h3 class="text-xl font-bold text-[#482E1D] mb-2">Distance to Port</h3>
         <p class="text-[#365b6d]">2,600 meters</p>
       </div>
-      <div class="bg-[#F8EFE0] bg-opacity-95 p-6 rounded-lg shadow-lg z-20">
+      <div class="bg-[#F8EFE0] bg-opacity-95 p-6 rounded-lg shadow-lg">
         <h3 class="text-xl font-bold text-[#482E1D] mb-2">Distance to Beach</h3>
         <p class="text-[#365b6d]">1,500 meters</p>
       </div>
