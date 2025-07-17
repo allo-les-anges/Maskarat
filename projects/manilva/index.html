@@ -93,7 +93,7 @@
 <section id="hero"
     class="relative h-screen flex items-center justify-center text-white overflow-hidden">
 
-    <div class="absolute inset-0 bg-no-repeat bg-cover animate-pan bg-position-responsive"
+    <div class="absolute inset-0 bg-no-repeat bg-cover animate-pan-zoom"
         style="
             background-image: url('https://raw.githubusercontent.com/allo-les-anges/Maskarat/main/projects/manilva/gallery/M-image-000.png');
             filter: brightness(1.2);
@@ -107,26 +107,33 @@
     </div>
 
     <style>
-        @keyframes pan {
+        @keyframes pan-zoom {
             0% {
                 background-position: 100% center;
+                background-size: 120% auto;
+            }
+            50% {
+                background-position: 50% center;
+                background-size: 140% auto;
             }
             100% {
                 background-position: 0% center;
+                background-size: 120% auto;
             }
         }
 
-        .animate-pan {
-            animation: pan 60s linear infinite;
-            background-size: 130% auto; /* default pour desktop */
+        .animate-pan-zoom {
+            animation: pan-zoom 60s ease-in-out infinite;
             background-position: 100% center;
+            background-size: 120% auto;
         }
 
-        /* Media query pour écrans plus petits */
+        /* Ajustement pour mobile */
         @media (max-width: 768px) {
-            .animate-pan {
-                background-size: 200% auto; /* plus zoomé, donc l'image paraît plus petite dans la zone visible */
+            .animate-pan-zoom {
+                animation: pan-zoom 60s ease-in-out infinite;
                 background-position: center center;
+                background-size: 150% auto;
             }
         }
     </style>
