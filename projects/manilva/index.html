@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viña Manilva - Your New Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .btn-primary {
+            background-color: #c8a97e;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #a78864;
+        }
+        .nav-link.active {
+            color: #c8a97e;
+            font-weight: bold;
+        }
+        .carousel-container {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+        }
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel-item {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 10;
+        }
+        .carousel-button.prev {
+            left: 10px;
+        }
+        .carousel-button.next {
+            right: 10px;
+        }
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+        .carousel-dots span {
+            margin: 0 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800">
+
+    <header class="bg-white shadow-md py-4 fixed w-full z-30">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-[#365b6d]">Viña Manilva</a>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6">
+                    <li><a href="#about" class="nav-link text-gray-600 hover:text-[#c8a97e] transition">Introduction</a></li>
+                    <li><a href="#location" class="nav-link text-gray-600 hover:text-[#c8a97e] transition">Location</a></li>
+                    <li><a href="#project-details" class="nav-link text-gray-600 hover:text-[#c8a97e] transition">Project Details</a></li>
+                    <li><a href="#floorplans" class="nav-link text-gray-600 hover:text-[#c8a97e] transition">Floorplans</a></li>
+                    <li><a href="#technical-details" class="nav-link text-gray-600 hover:text-[#c8a97e] transition">Technical Details</a></li>
+                    <li><a href="#contact" class="nav-link text-gray-600 hover:text-[#c8a97e] transition">Contact</a></li>
+                </ul>
+            </nav>
+            <button id="menu-toggle" class="md:hidden text-gray-600 hover:text-[#c8a97e] focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg mt-2">
+            <ul class="flex flex-col space-y-2 p-4">
+                <li><a href="#about" class="nav-link block text-gray-600 hover:text-[#c8a97e] transition">Introduction</a></li>
+                <li><a href="#location" class="nav-link block text-gray-600 hover:text-[#c8a97e] transition">Location</a></li>
+                <li><a href="#project-details" class="nav-link block text-gray-600 hover:text-[#c8a97e] transition">Project Details</a></li>
+                <li><a href="#floorplans" class="nav-link block text-gray-600 hover:text-[#c8a97e] transition">Floorplans</a></li>
+                <li><a href="#technical-details" class="nav-link block text-gray-600 hover:text-[#c8a97e] transition">Technical Details</a></li>
+                <li><a href="#contact" class="nav-link block text-gray-600 hover:text-[#c8a97e] transition">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section id="hero" class="relative bg-cover bg-center h-screen flex items-center justify-center text-white" style="background-image: url('http://googleusercontent.com/oc-content/file-content/fetch/test_6-3.pdf/2');">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="z-10 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Viña Manilva</h1>
+            <p class="text-xl md:text-2xl">Manilva's Finest</p>
+            <a href="#about" class="btn-primary mt-8 inline-block px-8 py-3 rounded-full text-lg">Discover More</a>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8">Discover Viña Manilva</h2>
+            <p class="text-lg leading-relaxed max-w-3xl mx-auto">
+                [cite_start]Viña Manilva is an exclusive collection of elegant homes nestled between the Mediterranean Sea and the sun-drenched hills of Manilva, one of the Costa del Sol's best-kept secrets[cite: 10, 11]. [cite_start]The name Viña Manilva pays tribute to the region's famous Moscatel vineyards, which have shaped the land and culture for generations[cite: 12, 13]. This boutique development captures that same essence combining tradition, nature, and contemporary Mediterranean living. [cite_start]Welcome to Viña Manilva - where timeless charm meets modern elegance[cite: 14, 15].
+            </p>
+        </div>
+    </section>
+
+    <section id="location" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Prime Location</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    [cite_start]The villa offers a perfect blend of unspoiled natural tranquility, local amenities within easy reach, and an authentic Andalusian coastal experience ideal for those seeking relaxation with convenient access to shops, restaurants, and leisure activities[cite: 17].
+                </p>
+                <div class="w-20 h-1 bg-[#c8a97e] mx-auto mt-4"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-[#365b6d] mb-2">Distance to Airport</h3>
+                    [cite_start]<p class="text-gray-700">90 km [cite: 18]</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-[#365b6d] mb-2">Distance to Port</h3>
+                    [cite_start]<p class="text-gray-700">2,600 meters [cite: 19]</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-[#365b6d] mb-2">Distance to Beach</h3>
+                    [cite_start]<p class="text-gray-700">1,500 meters [cite: 20]</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="project-details" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">The Viña Manilva Project</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">
+                    [cite_start]In Manilva's exclusive Guarda II Mare urbanisation, 12 high-quality townhouses are being developed, combining contemporary comfort with energy efficiency and elegant finishes[cite: 22]. [cite_start]Each home offers a spacious basement with garage and private cinema, an open-plan living area with kitchen and garden access, and three bedrooms with en-suite bathrooms[cite: 23]. [cite_start]Outdoors, you'll enjoy a generous garden and private saltwater pool[cite: 24]. [cite_start]Designed with minimal barriers between indoor and outdoor spaces, these sustainable homes feature A-rated energy certification, a 1kWp solar system (expandable), and climate-adapted design for maximum comfort and efficiency[cite: 25].
+                </p>
+                <div class="w-20 h-1 bg-[#c8a97e] mx-auto mt-4"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="floorplans" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Floorplans</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Explore the thoughtful layout and generous spaces of each floor.</p>
+                <div class="w-20 h-1 bg-[#c8a97e] mx-auto mt-4"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="http://googleusercontent.com/oc-content/file-content/fetch/test_6-3.pdf/6" alt="Ground Floor Plan" class="w-full h-64 object-cover object-center">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-[#365b6d] mb-4">Ground Floor</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            [cite_start]<li><strong>Living Room:</strong> 25.69 m² [cite: 28]</li>
+                            [cite_start]<li><strong>Kitchen:</strong> 15.25 m² [cite: 28]</li>
+                            [cite_start]<li><strong>Bathroom:</strong> 4.90 m² [cite: 28]</li>
+                            [cite_start]<li><strong>Private Bedroom:</strong> 18.12 m² [cite: 28]</li>
+                            [cite_start]<li><strong>Dining Room:</strong> 7.41 m² [cite: 28]</li>
+                            [cite_start]<li><strong>Garden:</strong> 225.00 m² [cite: 28]</li>
+                            [cite_start]<li><strong>Swimming Pool:</strong> 20 x 5m [cite: 28]</li>
+                            [cite_start]<li><strong>Total Surface 1st Floor:</strong> 75.00 m² [cite: 29]</li>
+                            [cite_start]<li><strong>Total Garden Surface:</strong> 225.00 m² [cite: 30]</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="http://googleusercontent.com/oc-content/file-content/fetch/test_6-3.pdf/7" alt="First Floor Plan" class="w-full h-64 object-cover object-center">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-[#365b6d] mb-4">First Floor</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            [cite_start]<li><strong>Bedroom 1:</strong> 9.34 m² [cite: 57]</li>
+                            [cite_start]<li><strong>Terrace 1:</strong> 4.34 m² [cite: 57]</li>
+                            [cite_start]<li><strong>Bathroom 1:</strong> 3.99 m² [cite: 57]</li>
+                            [cite_start]<li><strong>Walk-in Closet 1:</strong> 3.46 m² [cite: 57]</li>
+                            [cite_start]<li><strong>Bathroom 4:</strong> 3.57 m² [cite: 57]</li>
+                            [cite_start]<li><strong>Bathroom 3:</strong> 4.15 m² [cite: 58]</li>
+                            [cite_start]<li><strong>Bedroom 3:</strong> 11.63 m² [cite: 58]</li>
+                            [cite_start]<li><strong>Walk-in Closet 3:</strong> 10.55 m² [cite: 59]</li>
+                            [cite_start]<li><strong>Bathroom 2:</strong> 3.99 m² [cite: 59]</li>
+                            [cite_start]<li><strong>Walk-in Closet 2:</strong> 4.21 m² [cite: 60]</li>
+                            [cite_start]<li><strong>Bedroom 2:</strong> 3.56 m² [cite: 61]</li>
+                            [cite_start]<li><strong>Terrace 2:</strong> 12.21 m² [cite: 62]</li>
+                            [cite_start]<li><strong>Total Surface 2nd Floor:</strong> 75.00 m² [cite: 63]</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="http://googleusercontent.com/oc-content/file-content/fetch/test_6-3.pdf/8" alt="Underbuild Plan" class="w-full h-64 object-cover object-center">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-[#365b6d] mb-4">Underbuild</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            [cite_start]<li><strong>Spacious garage:</strong> 30 m² with many possibilities [cite: 67]</li>
+                            <li>Includes private cinema and storage.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="technical-details" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Technical Specifications</h2>
+                [cite_start]<p class="text-gray-600 max-w-2xl mx-auto">Discover the premium materials, exquisite finishes, and diverse options offered at Viña Manilva[cite: 84].</p>
+                <div class="w-20 h-1 bg-[#c8a97e] mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold text-[#365b6d] mb-4">Construction and Structure</h3>
+                    <ul class="list-disc list-inside space-y-3 text-gray-700">
+                        [cite_start]<li><strong>Foundation:</strong> Reinforced concrete slab, tailored to building and subsoil characteristics, in accordance with EHE instruction and applicable regulations[cite: 85].</li>
+                        [cite_start]<li><strong>Load-bearing Structure:</strong> Reticular floors of reinforced concrete, supported by square and rectangular pillars[cite: 86].</li>
+                        [cite_start]<li><strong>Independent Structure:</strong> Each house has an independent structure, separate from adjacent houses[cite: 87].</li>
+                        [cite_start]<li><strong>Façades:</strong> Double-wall system with outer brick finished with two-layer lime render, air cavity with thermal and acoustic insulation, and inner dry partitioning panels[cite: 88]. [cite_start]Part finished with wood-look porcelain gres panels[cite: 90].</li>
+                        [cite_start]<li><strong>Roofs:</strong> Flat, walkable roofs with thermal insulation (extruded polystyrene), waterproof membrane, and geotextile protective layer[cite: 91]. [cite_start]Finished with non-slip ceramic tiles, artificial grass, and white gravel[cite: 92].</li>
+                        [cite_start]<li><strong>Private Terraces:</strong> Finished with porcelain gres tiles, enclosed with masonry parapets and anodized aluminium railings with safety glass[cite: 93, 94].</li>
+                        [cite_start]<li><strong>Interior Walls and Partitions:</strong> Double layer of 13 mm plasterboard on both sides of a self-supporting metal structure with thermo-acoustic insulation[cite: 95]. [cite_start]Moisture-resistant plasterboard in wet areas[cite: 96]. [cite_start]Walls separating dwellings built with perforated ceramic bricks, clad with metal frame and plasterboards for privacy and acoustic insulation[cite: 97, 98].</li>
+                        [cite_start]<li><strong>Ceilings:</strong> 13 mm plasterboard on suspended metal framework[cite: 98]. [cite_start]Accessible and removable in bathrooms where technically required[cite: 99].</li>
+                        <li><strong>Interior Finishes:</strong> Smooth plastic paint throughout the home. [cite_start]Combination of paint and tile finish in kitchen office area[cite: 100].</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-bold text-[#365b6d] mb-4">Fittings and Systems</h3>
+                    <ul class="list-disc list-inside space-y-3 text-gray-700">
+                        [cite_start]<li><strong>Exterior Joinery:</strong> High-quality aluminium with thermal break, lacquered or anodized finish[cite: 101]. [cite_start]Sliding balcony doors in living rooms, kitchens, and master bedrooms; tilt-and-turn windows in other bedrooms[cite: 102]. [cite_start]Double thermal-acoustic glazing and aluminium roller shutters in bedrooms[cite: 102].</li>
+                        [cite_start]<li><strong>Interior Joinery:</strong> Armored entrance door, white lacquered interior doors with designer handles, white lacquered skirting boards[cite: 103]. [cite_start]Built-in wardrobes with sliding MDF doors, melamine interiors, shelf, and hanging rail[cite: 103]. [cite_start]Custom-designed walk-in wardrobe in master bedroom[cite: 103].</li>
+                        [cite_start]<li><strong>Kitchens:</strong> Modern kitchens with high- and low-capacity cabinets, Gola-style handles, soft-close drawers, aluminium kickplates[cite: 104]. [cite_start]Silestone-type countertop with integrated stainless steel sink and monobloc mixer tap[cite: 104]. [cite_start]Appliances include designer extractor hood, glass-ceramic cooktop, and independent stainless steel multifunction oven[cite: 104]. [cite_start]Personalization of finishes available[cite: 104].</li>
+                        <li><strong>Flooring & Tiling:</strong>
+                            <ul class="list-circle list-inside ml-4">
+                                [cite_start]<li>Indoor: Large-format porcelain tiles (beige/sand tones), wood-look porcelain tiles (oak tones), or AC-5 laminate flooring (oak finish)[cite: 105].</li>
+                                [cite_start]<li>Outdoor: Non-slip porcelain tiles matching indoor palette[cite: 105].</li>
+                                [cite_start]<li>Acoustic impact insulation throughout[cite: 105].</li>
+                                [cite_start]<li>Wall Tiling: Rectified tiles in wet areas (kitchen and bathrooms), two designer lines per room[cite: 105]. [cite_start]Optional custom selection[cite: 105].</li>
+                            </ul>
+                        </li>
+                        <li><strong>Sanitary Ware:</strong>
+                            <ul class="list-circle list-inside ml-4">
+                                [cite_start]<li>Master Bathroom: Ultra-flat non-slip resin shower tray with glass screen, designer vanity unit, vitrified porcelain toilet and bidet, anti-fog mirror[cite: 106].</li>
+                                [cite_start]<li>Secondary Bathroom: Rectangular steel bathtub and matching high-end sanitary ware[cite: 107].</li>
+                                [cite_start]<li>Taps: High-quality chrome single-lever taps with aerators for water-saving[cite: 108].</li>
+                            </ul>
+                        </li>
+                        [cite_start]<li><strong>Plumbing & Hot Water:</strong> Multilayer polyethylene piping (reduced corrosion/noise)[cite: 109]. [cite_start]PVC drainage system[cite: 109]. [cite_start]Hot water production via aerothermal system with recirculation[cite: 109].</li>
+                        [cite_start]<li><strong>Air Conditioning:</strong> Full hot-cold air conditioning via ducted system[cite: 109]. [cite_start]Airzone or similar smart control in each room with motorized grilles[cite: 109]. [cite_start]Programmable inverter system by renowned brand[cite: 109].</li>
+                        [cite_start]<li><strong>Electrical & Connectivity:</strong> TV and data outlets in living room and all bedrooms, TV point in kitchen[cite: 109]. [cite_start]Power points for electric heating[cite: 109]. [cite_start]Video intercom system[cite: 109].</li>
+                        [cite_start]<li><strong>Swimming Pool:</strong> Outdoor saltwater pool with night lighting[cite: 109].</li>
+                        [cite_start]<li><strong>Photovoltaic System:</strong> 1 kWp solar panel system on roof, connected to home's main network for self-consumption, pre-installed for future expansion[cite: 110].</li>
+                    </ul>
+                    <div class="mt-8">
+                        [cite_start]<p class="text-gray-600">For this project, we have consciously chosen the high-quality materials and finishes from <strong class="text-[#365b6d]">Porcelanosa</strong>, a globally recognized brand synonymous with innovation, sustainability, and design[cite: 75, 76]. [cite_start]Porcelanosa has been at the forefront of the interior and construction sector for decades, offering a range characterized by elegant ceramic floors, natural stone, exclusive bathroom fittings, and state-of-the-art kitchen systems[cite: 77]. [cite_start]Thanks to the collaboration with this prestigious brand, we guarantee a finish of the highest level—with attention to detail, ease of use, and timeless aesthetics[cite: 78]. [cite_start]Every space exudes luxury and comfort, perfectly tailored to the lifestyle of the most discerning residents[cite: 79]. [cite_start]Choose a home where quality is palpable in every detail—thanks to Porcelanosa[cite: 80].</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Contact Us</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Interested in Viña Manilva? We are here to help you.</p>
+                <div class="w-20 h-1 bg-[#c8a97e] mx-auto mt-4"></div>
+            </div>
+
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <form action="https://formspree.io/f/myzjgeka" method="POST" class="bg-white p-8 rounded-lg shadow-lg">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
+                            <input type="text" id="name" name="Naam" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#c8a97e]" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">E-mail</label>
+                            <input type="email" id="email" name="_replyto" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#c8a97e]" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="phone" class="block text-gray-700 font-medium mb-2">Phone</label>
+                            <input type="tel" id="phone" name="Telefoon" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#c8a97e]">
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                            <textarea id="message" name="Bericht" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#c8a97e]" required></textarea>
+                        </div>
+                        <input type="hidden" name="_subject" value="Nieuw bericht van Viña Manilva">
+                        <input type="hidden" name="_cc" value="gillian@amaru-homes.com, deborah@amaru-homes.com">
+                        <div class="text-center">
+                            <button type="submit" class="btn-primary px-8 py-3 rounded-full text-white font-medium">Send</button>
+                        </div>
+                        <p class="text-center text-sm text-gray-500 mt-4">This is a demo contact form</p>
+                    </form>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-white p-8 rounded-lg shadow-lg h-full">
+                        <h3 class="text-2xl font-bold mb-6 text-[#365b6d]">Contact Details</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-[#c8a97e] bg-opacity-20 rounded-full flex items-center justify-center mr-4 mt-1">
+                                    <svg class="w-5 h-5 text-[#c8a97e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-700">Address</h4>
+                                    <p class="text-gray-600">Manilva, Costa del Sol<br>Málaga, Spain</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <img src="https://allo-les-anges.github.io/Maskarat/assets/images/gallery/gil.jpg" alt="Gillian Diver" class="w-12 h-12 rounded-full object-cover mr-4 mt-1 shadow-md">
+                                <div>
+                                    <h4 class="font-bold text-gray-700">🇪🇸 Spain</h4>
+                                    <h4 class="font-bold text-gray-700">Gillian Diver</h4>
+                                    <p class="text-gray-600">Phone : +34 627768233</p>
+                                    <p class="text-gray-600">E-mail: <a href="mailto:gillian@amaru-homes.com" class="underline">gillian@amaru-homes.com</a></p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <img src="https://allo-les-anges.github.io/Maskarat/assets/images/gallery/deb.jpg" alt="Déborah Berings" class="w-12 h-12 rounded-full object-cover mr-4 mt-1 shadow-md">
+                                <div>
+                                    <h4 class="font-bold text-gray-700">🇪🇸 Spain</h4>
+                                    <h4 class="font-bold text-gray-700">Déborah Berings</h4>
+                                    <p class="text-gray-600">Phone : +34 627768253</p>
+                                    <p class="text-gray-600">E-mail: <a href="mailto:deborah@amaru-homes.com" class="underline">deborah@amaru-homes.com</a></p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <img src="https://allo-les-anges.github.io/Maskarat/assets/images/gallery/gaet.jpg" alt="Gaëtan Mukeba-Harchies" class="w-12 h-12 rounded-full object-cover mr-4 mt-1 shadow-md">
+                                <div>
+                                    <h4 class="font-bold text-gray-700">🇧🇪 Belgium</h4>
+                                    <h4 class="font-bold text-gray-700">Gaëtan Mukeba-Harchies</h4>
+                                    <p class="text-gray-600">Phone : +32 470241294</p>
+                                    <p class="text-gray-600">E-mail: <a href="mailto:gaetan@amaru-homes.com" class="underline">gaetan@amaru-homes.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#1e3c56] text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-8 md:mb-0">
+                    <h3 class="text-2xl font-bold mb-4">Viña Manilva</h3>
+                    <p class="max-w-xs text-gray-300">Luxury living on the Mediterranean, where design, views and exclusivity come together.</p>
+                </div>
+                <div class="mb-8 md:mb-0">
+                    <h4 class="text-lg font-bold mb-4">Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-gray-300 hover:text-white transition">Introduction</a></li>
+                        <li><a href="#location" class="text-gray-300 hover:text-white transition">Location</a></li>
+                        <li><a href="#project-details" class="text-gray-300 hover:text-white transition">Project Details</a></li>
+                        <li><a href="#floorplans" class="text-gray-300 hover:text-white transition">Floorplans</a></li>
+                        <li><a href="#technical-details" class="text-gray-300 hover:text-white transition">Technical Details</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                            <span class="text-gray-300">+34 627768233</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <span class="text-gray-300">info@amaru-homes.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-10 pt-6 text-center text-gray-400 text-sm">
+                <p>&copy; 2023 Viña Manilva. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        // Active link highlighting
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
