@@ -167,77 +167,99 @@
   </style>
 </section>
 
-    <section id="location" class="py-20 bg-white">
-  <div class="container mx-auto px-4">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4 text-[#365b6d]">Voorzieningen</h2>
-      <p class="text-gray-600 max-w-2xl mx-auto">
-        Strategisch gelegen voor optimaal comfort en gemak
+    <section id="location" class="relative py-20 bg-fixed bg-center bg-cover min-h-[600px]"
+    style="background-image: url('https://raw.githubusercontent.com/allo-les-anges/Maskarat/main/projects/manilva/gallery/M-image-004.jpg');">
+
+  <!-- Overlay sombre -->
+  <div class="absolute inset-0 bg-black bg-opacity-40 animate-pan"></div>
+
+  <div class="relative z-10 container mx-auto px-4">
+    <div class="text-center text-white mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Prime Location</h2>
+      <p class="max-w-2xl mx-auto text-[#F8EFE0]">
+        The villa offers a perfect blend of unspoiled natural tranquility, local amenities within easy reach, and an authentic Andalusian coastal experience ideal for those seeking relaxation with convenient access to shops, restaurants, and leisure activities.
       </p>
-      <div class="w-20 h-1 bg-[#c8a97e] mx-auto mt-4 rounded"></div>
+      <div class="w-20 h-1 bg-[#D3B285] mx-auto mt-4 rounded"></div>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-      <div class="amenity-card bg-gray-50 p-6 rounded-lg shadow-md">
-        <div class="w-16 h-16 bg-[#c8a97e] bg-opacity-20 rounded-full flex items-center justify-center mb-6 mx-auto">
+
+    <!-- Cartes blanches, bien visibles -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+      <div class="bg-[#F8EFE0] p-6 rounded-lg shadow-lg">
+        <div class="w-16 h-16 bg-[#c8a97e] bg-opacity-20 rounded-full flex items-center justify-center mb-4 mx-auto">
           <!-- Icône Zee -->
-          <svg class="w-8 h-8 text-[#c8a97e]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+          <svg class="w-8 h-8 text-[#c8a97e]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
             viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M2 20c2-2 4-2 6 0s4 2 6 0 4-2 6 0 4 2 6 0" />
           </svg>
         </div>
-        <h3 class="text-xl font-bold text-center mb-2 text-[#365b6d]">Zee</h3>
-        <p class="text-gray-600 text-center">
+        <h3 class="text-xl font-bold text-[#482E1D] mb-2">Zee</h3>
+        <p class="text-[#365b6d]">
           Op slechts 400 meter van de zee biedt dit project een spectaculair en onbelemmerd zeezicht. Elke dag wakker worden met de horizon van de Middellandse Zee als decor.
         </p>
-        <p class="text-[#c8a97e] font-bold text-center mt-4">400 meter</p>
+        <p class="text-[#c8a97e] font-bold mt-4">400 meter</p>
       </div>
 
-      <div class="amenity-card bg-gray-50 p-6 rounded-lg shadow-md">
-        <div class="w-16 h-16 bg-[#c8a97e] bg-opacity-20 rounded-full flex items-center justify-center mb-6 mx-auto">
+      <div class="bg-[#F8EFE0] p-6 rounded-lg shadow-lg">
+        <div class="w-16 h-16 bg-[#c8a97e] bg-opacity-20 rounded-full flex items-center justify-center mb-4 mx-auto">
           <!-- Icône Haven -->
-          <svg class="w-8 h-8 text-[#c8a97e]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+          <svg class="w-8 h-8 text-[#c8a97e]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
             viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <circle cx="12" cy="5" r="1" />
             <path d="M12 6v13M5 12H2a10 10 0 0020 0h-3" />
           </svg>
         </div>
-        <h3 class="text-xl font-bold text-center mb-2 text-[#365b6d]">Haven</h3>
-        <p class="text-gray-600 text-center">
+        <h3 class="text-xl font-bold text-[#482E1D] mb-2">Haven</h3>
+        <p class="text-[#365b6d]">
           De exclusieve jachthaven ligt op 350 meter afstand, maar vanuit het project geniet u nu al van een schitterend uitzicht over de haven en de aangemeerde luxejachten.
         </p>
-        <p class="text-[#c8a97e] font-bold text-center mt-4">350 meter</p>
+        <p class="text-[#c8a97e] font-bold mt-4">350 meter</p>
       </div>
 
-      <div class="amenity-card bg-gray-50 p-6 rounded-lg shadow-md">
-        <div class="w-16 h-16 bg-[#c8a97e] bg-opacity-20 rounded-full flex items-center justify-center mb-6 mx-auto">
+      <div class="bg-[#F8EFE0] p-6 rounded-lg shadow-lg">
+        <div class="w-16 h-16 bg-[#c8a97e] bg-opacity-20 rounded-full flex items-center justify-center mb-4 mx-auto">
           <!-- Icône Winkels -->
           <svg class="w-8 h-8 text-[#c8a97e]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
           </svg>
         </div>
-        <h3 class="text-xl font-bold text-center mb-2 text-[#365b6d]">Winkels</h3>
-        <p class="text-gray-600 text-center">
+        <h3 class="text-xl font-bold text-[#482E1D] mb-2">Winkels</h3>
+        <p class="text-[#365b6d]">
           Op slechts 1,1 kilometer bevindt zich de dichtstbijzijnde winkel, ideaal voor uw dagelijkse boodschappen. Daarnaast vindt u in de directe omgeving verschillende supermarkten.
         </p>
-        <p class="text-[#c8a97e] font-bold text-center mt-4">1,1 kilometer</p>
+        <p class="text-[#c8a97e] font-bold mt-4">1,1 kilometer</p>
       </div>
 
-      <div class="amenity-card bg-gray-50 p-6 rounded-lg shadow-md">
-        <div class="w-16 h-16 bg-[#c8a97e] bg-opacity-20 rounded-full flex items-center justify-center mb-6 mx-auto">
+      <div class="bg-[#F8EFE0] p-6 rounded-lg shadow-lg">
+        <div class="w-16 h-16 bg-[#c8a97e] bg-opacity-20 rounded-full flex items-center justify-center mb-4 mx-auto">
           <!-- Icône Luchthaven -->
           <svg class="w-8 h-8 text-[#c8a97e]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
           </svg>
         </div>
-        <h3 class="text-xl font-bold text-center mb-2 text-[#365b6d]">Luchthaven</h3>
-        <p class="text-gray-600 text-center">
+        <h3 class="text-xl font-bold text-[#482E1D] mb-2">Luchthaven</h3>
+        <p class="text-[#365b6d]">
           Het project is gunstig gelegen op slechts 55 tot 65 kilometer van de luchthaven van Alicante. Met de auto bedraagt de reistijd ongeveer 45 tot 50 minuten.
         </p>
-        <p class="text-[#c8a97e] font-bold text-center mt-4">45 Minuten</p>
+        <p class="text-[#c8a97e] font-bold mt-4">45 Minuten</p>
       </div>
     </div>
   </div>
+
+  <style>
+    @keyframes pan {
+      0% {
+        background-position: 100% center;
+      }
+      100% {
+        background-position: 0% center;
+      }
+    }
+    .animate-pan {
+      animation: pan 60s linear infinite;
+    }
+  </style>
 </section>
+
 
 
 
