@@ -167,29 +167,11 @@
   </style>
 </section>
 
-    <style>
-  @keyframes panBackground {
-    0% { background-position: 0% center; }
-    100% { background-position: 100% center; }
-  }
-
-  .hero-bg-animated {
-    background-image: url('https://raw.githubusercontent.com/allo-les-anges/Maskarat/main/projects/manilva/gallery/M-image-004.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 0% center;
-    animation: panBackground 60s linear infinite;
-    filter: brightness(1.2);
-    position: relative;
-    z-index: 0;
-  }
-</style>
-
-<section id="location" class="relative py-20 bg-fixed hero-bg-animated">
-  <!-- Overlay avec z-index bas -->
+    <section id="location" class="relative py-20 bg-fixed bg-center bg-cover" style="background-image: url('https://raw.githubusercontent.com/allo-les-anges/Maskarat/main/projects/manilva/gallery/M-image-004.jpg');">
+  <!-- Overlay uniquement sur l’image de fond -->
   <div class="absolute inset-0 bg-black bg-opacity-30 z-0"></div>
 
-  <!-- Contenu avec z-index plus haut -->
+  <!-- Contenu par-dessus -->
   <div class="relative z-10 container mx-auto px-4">
     <div class="text-center text-white mb-12">
       <h2 class="text-3xl md:text-4xl font-bold mb-4">Prime Location</h2>
@@ -199,7 +181,8 @@
       <div class="w-20 h-1 bg-[#D3B285] mx-auto mt-4"></div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+    <!-- Cartes -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center relative z-10">
       <div class="bg-[#F8EFE0] bg-opacity-95 p-6 rounded-lg shadow-lg">
         <h3 class="text-xl font-bold text-[#482E1D] mb-2">Distance to Airport</h3>
         <p class="text-[#365b6d]">90 km</p>
