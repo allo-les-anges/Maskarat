@@ -169,8 +169,11 @@
 
     <section id="location" class="relative py-20 bg-fixed bg-center bg-cover" style="background-image: url('https://raw.githubusercontent.com/allo-les-anges/Maskarat/main/projects/manilva/gallery/M-image-004.jpg'); min-height: 600px;">
 
-  <!-- Contenu par-dessus -->
-  <div class="relative z-20 container mx-auto px-4">
+  <!-- Overlay sombre semi-transparent -->
+  <div class="absolute inset-0 bg-black bg-opacity-40 z-0"></div>
+
+  <!-- Contenu au-dessus de l'overlay -->
+  <div class="relative z-10 container mx-auto px-4">
     <div class="text-center text-white mb-12">
       <h2 class="text-3xl md:text-4xl font-bold mb-4">Prime Location</h2>
       <p class="max-w-2xl mx-auto text-[#F8EFE0]">
@@ -179,22 +182,49 @@
       <div class="w-20 h-1 bg-[#D3B285] mx-auto mt-4"></div>
     </div>
 
+    <!-- Cartes -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-      <div class="bg-[#F8EFE0] bg-opacity-95 p-6 rounded-lg shadow-lg">
+      <div class="bg-[#F8EFE0] p-6 rounded-lg shadow-lg">
+        <div class="w-16 h-16 bg-[#D3B285] rounded-full flex items-center justify-center mx-auto mb-4">
+          <!-- Icône avion -->
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+               viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2.5 19l19-7-19-7v6l13 1-13 1v6z" />
+          </svg>
+        </div>
         <h3 class="text-xl font-bold text-[#482E1D] mb-2">Distance to Airport</h3>
         <p class="text-[#365b6d]">90 km</p>
       </div>
-      <div class="bg-[#F8EFE0] bg-opacity-95 p-6 rounded-lg shadow-lg">
+
+      <div class="bg-[#F8EFE0] p-6 rounded-lg shadow-lg">
+        <div class="w-16 h-16 bg-[#D3B285] rounded-full flex items-center justify-center mx-auto mb-4">
+          <!-- Icône port -->
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+               viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="5" r="2" />
+            <path d="M12 7v10M5 18h14" />
+          </svg>
+        </div>
         <h3 class="text-xl font-bold text-[#482E1D] mb-2">Distance to Port</h3>
         <p class="text-[#365b6d]">2,600 meters</p>
       </div>
-      <div class="bg-[#F8EFE0] bg-opacity-95 p-6 rounded-lg shadow-lg">
+
+      <div class="bg-[#F8EFE0] p-6 rounded-lg shadow-lg">
+        <div class="w-16 h-16 bg-[#D3B285] rounded-full flex items-center justify-center mx-auto mb-4">
+          <!-- Icône plage -->
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+               viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 16c3 3 6 3 9 0s6-3 9 0" />
+            <path d="M12 3v13" />
+          </svg>
+        </div>
         <h3 class="text-xl font-bold text-[#482E1D] mb-2">Distance to Beach</h3>
         <p class="text-[#365b6d]">1,500 meters</p>
       </div>
     </div>
   </div>
 </section>
+
 
     <section id="project-details" class="py-20 bg-white">
         <div class="container mx-auto px-4">
