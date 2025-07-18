@@ -345,17 +345,30 @@ Designed to blur the lines between indoor and outdoor living, these sustainable 
         </div>
     </section>
 
-<section id="gallery" class="py-20 bg-gray-100">
+<!-- Navigation Menu -->
+<header class="bg-white shadow">
+  <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold">Guarda II Mare</h1>
+    <nav class="space-x-6">
+      <a href="#home" class="text-gray-600 hover:text-[#c8a97e]">Home</a>
+      <a href="#about" class="text-gray-600 hover:text-[#c8a97e]">About</a>
+      <a href="#carousel-section" class="text-gray-600 hover:text-[#c8a97e]">Gallery</a>
+      <a href="#contact" class="text-gray-600 hover:text-[#c8a97e]">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- gallery Section -->
+<section id="gallery" class="relative py-20 bg-gray-50 overflow-hidden">
   <div class="container mx-auto px-4">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">Gallery</h2>
-      <p class="text-gray-600 max-w-2xl mx-auto">Explore the elegance and comfort of our homes through these images.</p>
-      <div class="w-20 h-1 bg-[#c8a97e] mx-auto mt-4"></div>
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Project View</h2>
+      <div class="w-20 h-1 bg-[#c8a97e] mx-auto"></div>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-12">
-      <!-- Images M-image-003 to M-image-020 -->
-      <!-- Replace the src attribute with the correct path if needed -->
+    <div id="image-carousel" class="relative w-full max-w-4xl mx-auto h-96 overflow-hidden rounded-lg shadow-xl">
+      <div id="carousel-inner" class="flex transition-transform duration-700 ease-in-out h-full">
+      
       <img src="https://raw.githubusercontent.com/allo-les-anges/Maskarat/main/projects/manilva/gallery/M-image-003.png" alt="Gallery image" class="rounded-lg shadow-md hover:scale-105 transition duration-300">
       <img src="https://raw.githubusercontent.com/allo-les-anges/Maskarat/main/projects/manilva/gallery/M-image-004.png" alt="Gallery image" class="rounded-lg shadow-md hover:scale-105 transition duration-300">
       <img src="https://raw.githubusercontent.com/allo-les-anges/Maskarat/main/projects/manilva/gallery/M-image-005.png" alt="Gallery image" class="rounded-lg shadow-md hover:scale-105 transition duration-300">
@@ -374,10 +387,40 @@ Designed to blur the lines between indoor and outdoor living, these sustainable 
       <img src="https://raw.githubusercontent.com/allo-les-anges/Maskarat/main/projects/manilva/gallery/M-image-018.png" alt="Gallery image" class="rounded-lg shadow-md hover:scale-105 transition duration-300">
       <img src="https://raw.githubusercontent.com/allo-les-anges/Maskarat/main/projects/manilva/gallery/M-image-019.png" alt="Gallery image" class="rounded-lg shadow-md hover:scale-105 transition duration-300">
       <img src="https://raw.githubusercontent.com/allo-les-anges/Maskarat/main/projects/manilva/gallery/M-image-020.png" alt="Gallery image" class="rounded-lg shadow-md hover:scale-105 transition duration-300">
+
+      </div>
+
+      <!-- Navigation Buttons -->
+      <button id="prevBtn" class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75">
+        &#10094;
+      </button>
+      <button id="nextBtn" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75">
+        &#10095;
+      </button>
+
+      <!-- Dots (optional) -->
+      <div id="carousel-dots" class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2"></div>
     </div>
   </div>
 </section>
-    
+
+<script>
+  const carousel = document.getElementById('carousel-inner');
+  const images = carousel.children;
+  const total = images.length;
+  let index = 0;
+
+  document.getElementById('nextBtn').addEventListener('click', () => {
+    index = (index + 1) % total;
+    carousel.style.transform = `translateX(-${index * 100}%)`;
+  });
+
+  document.getElementById('prevBtn').addEventListener('click', () => {
+    index = (index - 1 + total) % total;
+    carousel.style.transform = `translateX(-${index * 100}%)`;
+  });
+</script>
+
     <section id="floorplans" class="py-20 bg-gray-100">
     <div class="container mx-auto px-4">
         <div class="text-center mb-12">
